@@ -1,0 +1,62 @@
+<html>
+  <head>
+    <title>Google</title>
+    <link rel="stylesheet" href="/static/assets/css/2001/home.css" />
+    <link rel="shortcut icon" href="/static/assets/images/2000/favicon.ico" type="image/x-icon" />
+  </head>
+  <body bgcolor="#ffffff" text="#000000" link="#0000cc" vlink="551a8b" alink="#ff0000">
+    <center>
+      <img width="305" height="115" src="/static/assets/images/2001/logo.gif" border="0" alt="Google" /><br /><br />
+      <form action="/search" method="get" <%= preferences.results_tab == "true" ? "target=_blank" : "" %> >
+        <table cellspacing="0" cellpadding="0">
+          <tbody>
+            <tr align="center" valign="baseline">
+              <td width="75">&nbsp;</td>
+              <td nowrap="nowrap"><font face="arial,sans-serif" size="-1">Search <%= parseInt(preferences.total).toLocaleString() %> web page<%= parseInt(preferences.total) !== 1 ? "s" : "" %></font></td>
+              <td></td>
+            </tr>
+            <tr align="center" valign="middle">
+              <td width="75">&nbsp;</td>
+              <td align="center">
+                <input type="text" framewidth="4" name="q" size="55" />
+                <br />
+                <input type="submit" value="Google Search" /><input type="submit" name="lucky" value="I'm Feeling Lucky" />
+              </td>
+              <td nowrap="nowrap" valign="top" align="left">
+                <font face="arial,sans-serif" size="-2">&nbsp;<a href="/advanced_search">Advanced&nbsp;Search</a><br />&nbsp;<a href="/preferences">Preferences</a></font>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </form>
+      <br />
+      <font size="-1">
+        <a href="/nonexistent">
+          <font color="#006600"><b>Google Web Directory</b></font>
+        </a>
+        <br />
+        <font color="#006600">
+          <i>the web organized by topic</i>
+        </font>
+      </font>
+      <br />
+      <br />
+      <br />
+      <br />
+      <br />
+      <br />
+      <font size="-1">
+        <a href="https://jobs.google.com/">Cool Jobs</a>
+        -
+        <a href="https://ads.google.com">Advertise with Us</a>
+        -
+        <b>
+          <a href="https://about.google">All&nbsp;About&nbsp;Google</a>
+        </b>
+      </font>
+      <p>
+        <font size="-2">©<%= preferences.copyright %> Google</font>
+      </p>
+    </center>
+  </body>
+</html>

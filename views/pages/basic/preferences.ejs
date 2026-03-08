@@ -1,0 +1,22 @@
+<html>
+  <head>
+    <title>Preferences</title>
+  </head>
+  <body>
+    <h1>Preferences</h1>
+    <form method="post" action="/preferences/set">
+      <hr />
+      <% Object.values(groups).forEach(group => { %>
+        <b><%= group.name %></b>
+        <br>
+        <% group.options.forEach(id => { %>
+          <% const option = options[id] %>
+          <% const value = cookies[id] ?? option.default %>
+          <%- include("../../partials/basic/preferencesField", { id, option, value }) %>
+        <% }) %>
+        <hr />
+      <% }); %>
+      <input type="submit" value="Save" />
+    </form>
+  </body>
+</html>

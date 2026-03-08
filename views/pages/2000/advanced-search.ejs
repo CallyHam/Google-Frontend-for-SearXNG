@@ -1,0 +1,140 @@
+<html>
+  <head>
+    <title>Google Advanced Search</title>
+    <link rel="stylesheet" href="/static/assets/css/2000/advanced-search.css" />
+    <link rel="shortcut icon" href="/static/assets/images/2000/favicon.ico" type="image/x-icon" />
+  </head>
+  <body alink="#000099" bgcolor="#ffffff" link="#0000cc" text="#000000" vlink="#551a8b" onload="setFocus()">
+    <form method="GET" action="/advanced_search/v1">
+      <table width="92%" border="0" cellpadding="0" cellspacing="2">
+        <tbody>
+          <tr valign="bottom">
+            <td width="1%">
+              <a href="/"><img alt="Google" border="0" height="78" src="/static/assets/images/2000/Title_Left.gif" width="200" /></a>
+            </td>
+            <td valign="middle">
+              <table cellspacing="2" cellpadding="2" border="0" width="100%">
+                <tbody>
+                  <tr bgcolor="#3366cc">
+                    <td valign="middle">
+                      <font face="arial,sans-serif">
+                        <b><font color="#ffffff">&nbsp;Advanced Search</font></b>
+                      </font>
+                    </td>
+                  </tr>
+                </tbody>
+              </table>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+      <table width="92%" border="0" cellpadding="0" cellspacing="0">
+        <tbody>
+          <tr>
+            <td colspan="3" bgcolor="#3366cc"><img src="/static/assets/images/2000/cleardot.gif" height="1" /></td>
+          </tr>
+        </tbody>
+      </table>
+      <!------Advanced Search-------->
+      <table cellpadding="3" cellspacing="0" width="92%">
+        <tbody>
+          <tr>
+            <td rowspan="2" valign="top">
+              <font face="arial,sans-serif"><b>Advanced Search</b></font>
+            </td>
+            <td valign="top">
+              <font face="arial,sans-serif">
+                Search for pages that contain
+                <select name="as_qt">
+                  <option value="w" selected="selected">the word(s)</option>
+                  <option value="p">the phrase</option>
+                </select>
+              </font>
+            </td>
+            <td valign="top">
+              <input type="text" name="as_q" size="35" /><br /><font face="arial,sans-serif" size="-1">*Only this field is required.</font>
+            </td>
+          </tr>
+          <tr>
+            <td valign="top" nowrap="nowrap">
+              <font face="arial,sans-serif">
+                Exclude any pages that contain
+                <select name="as_eqt">
+                  <option value="w" selected="selected">the word(s)</option>
+                  <option value="p">the phrase</option>
+                </select>
+              </font>
+            </td>
+            <td><input type="text" name="as_eq" size="35" /></td>
+          </tr>
+          <tr>
+            <td valign="top"></td>
+            <td valign="top" nowrap="nowrap">
+              <font face="arial,sans-serif">
+                <select name="as_dt">
+                  <option value="i" selected="selected">Include only</option>
+                  <option value="e">Exclude</option>
+                </select>
+                pages from the site or domain
+              </font>
+            </td>
+            <td><input type="text" name="sitesearch" size="35" /><br /><font face="arial,sans-serif" size="-1">Examples: .org, google.com</font></td>
+          </tr>
+            <td></td>
+            <td></td>
+            <td valign="bottom" rowspan="2">
+              <input type="submit" value="Google Search" /><br /><br />
+            </td>
+          </tr>
+        </tbody>
+      </table>
+      <table width="92%" border="0" cellpadding="0" cellspacing="0">
+        <tbody>
+          <tr>
+            <td colspan="3" bgcolor="#3366cc"><img src="/static/assets/images/2000/cleardot.gif" height="1" /></td>
+          </tr>
+        </tbody>
+      </table>
+      <!------Page-Specific Search-------->
+      <table cellpadding="3" cellspacing="0" width="92%">
+        <tbody>
+          <tr valign="top">
+            <td rowspan="2">
+              <font face="arial,sans-serif"><b>Page-specific Search</b></font>
+            </td>
+            <td valign="top"><font face="arial,sans-serif">Find pages that are similar to the page </font></td>
+            <td valign="top">
+              <table cellpadding="0" cellspacing="0" border="0">
+                <tbody>
+                  <tr>
+                    <td valign="top" nowrap="nowrap">
+                      <form method="GET" action="/advanced_search/v1">
+                        <input type="text" name="as_rq" size="30" />
+                        <input type="submit" value="Go" />
+                      </form>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td><font face="arial,sans-serif" size="-1">Example: www.google.com/help.html</font></td>
+                  </tr>
+                </tbody>
+              </table>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+      <br>
+      <table width="92%" border="0" cellpadding="0" cellspacing="0">
+        <tbody>
+          <tr>
+            <td colspan="3" bgcolor="#3366cc">
+              <img src="/static/assets/images/2000/cleardot.gif" height="1" />
+            </td>
+          </tr>
+        </tbody>
+      </table>
+      <p></p>
+      <center><font face="arial,sans-serif" color="#6f6f6f" size="-1">©<%= preferences.copyright %> Google</font></center>
+    </form>
+  </body>
+</html>

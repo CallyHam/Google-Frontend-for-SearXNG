@@ -1,0 +1,103 @@
+body,
+td,
+div,
+p,
+a,
+font,
+span {
+  font-family: arial, sans-serif;
+}
+body {
+  margin-top: 2;
+}
+.c {
+  width: 4;
+  height: 4;
+}
+body {
+  bgcolor: "#ffffff";
+}
+A:link {
+  color: #0000cc;
+}
+A:visited {
+  color: #551a8b;
+}
+A:active {
+  color: #ff0000;
+}
+.form-noindent {
+  background-color: #ffffff;
+  border: #c3d9ff 1px solid;
+}
+
+.gaia.le.lbl {
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: smaller;
+}
+.gaia.le.fpwd {
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 70%;
+}
+.gaia.le.chusr {
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 70%;
+}
+.gaia.le.val {
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: smaller;
+}
+.gaia.le.button {
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: smaller;
+}
+.gaia.le.rem {
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: smaller;
+}
+
+.gaia.captchahtml.desc {
+  font-family: arial, sans-serif;
+  font-size: smaller;
+}
+.gaia.captchahtml.cmt {
+  font-family: arial, sans-serif;
+  font-size: smaller;
+  font-style: italic;
+}
+
+.footer {
+  padding-right: 5px;
+  padding-left: 5px;
+  padding-bottom: 5px;
+  padding-top: 5px;
+  font-size: 83%;
+  border-top: #ffffff 1px solid;
+  border-bottom: #ffffff 1px solid;
+  background: #e5ecf9;
+  text-align: center;
+  font-family: arial, sans-serif;
+}
+
+.body {
+  margin-left: 3em;
+  margin-right: 5em;
+  font-family: arial, sans-serif;
+}
+
+div.errorbox-good {
+}
+
+div.errorbox-bad {
+}
+
+div.errormsg {
+  color: red;
+  font-size: smaller;
+  font-family: arial, sans-serif;
+}
+font.errormsg {
+  color: red;
+  font-size: smaller;
+  font-family: arial, sans-serif;
+}

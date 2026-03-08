@@ -1,0 +1,190 @@
+<html>
+  <head>
+    <% const params = new URLSearchParams(query) %>
+    <% const page = parseInt(query.page) || 1 %>
+    <title>Google Search: <%= query.q %></title>
+    <link rel="stylesheet" href="/static/assets/css/2006/search.css" />
+    <link rel="shortcut icon" href="/static/assets/images/2000/favicon.ico" type="image/x-icon" />
+  </head>
+  <body bgcolor="#ffffff">
+    <div align="right" nowrap="" style="padding-bottom: 4px" width="100%">
+      <% if (cookies.email) { %>
+        <font size="-1"><b><%= cookies.email %></b>&nbsp;|&nbsp;<a href="/accounts/logout">Sign out</a></font>
+      <% } else { %>
+        <font size="-1"><a href="/accounts/login">Sign in</a></font>
+      <% } %>
+    </div>
+    <table border="0" cellpadding="3" cellspacing="0">
+      <tbody>
+        <tr>
+          <td rowspan="3" valign="bottom">
+            <a href="/">
+              <img src="/static/assets/images/2004/logo_sm.gif" width="150" height="55" alt="Go to Google Home" border="0">
+            </a>
+          </td>
+          <td nowrap="nowrap">
+            <font size="-1"><b>Web</b>&nbsp;&nbsp;&nbsp;&nbsp;<a href="/search?q=<%= query.q %>&category=images">Images</a>&nbsp;&nbsp;&nbsp;&nbsp;<a href="/nonexistent">Video</a>&nbsp;&nbsp;&nbsp;&nbsp;<a href="/nonexistent">News</a>&nbsp;&nbsp;&nbsp;&nbsp;<a href="/nonexistent">Maps</a>&nbsp;&nbsp;&nbsp;&nbsp;<a href="https://about.google/products"><b>more »</b></a></font>
+          </td>
+        </tr>
+        <tr>
+          <td valign="middle">
+            <form method="GET" action="/search" <%= preferences.results_tab == "true" ? "target=_blank" : "" %>>
+              <input
+                type="text"
+                name="q"
+                size="34"
+                maxlength="2048"
+                value="<%= query.q %>"
+              /><font size="-1"> <input type="submit" value="Search" /></font>
+            </form>
+          </td>
+          <td valign="top">
+            <font size="-2" >
+              <a href="/advanced_search">Advanced Search</a>
+              <br>
+              <a href="/preferences">Preferences</a>
+            </font>
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <font size="-1"></font>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+    <table cellspacing="0" cellpadding="0" border="0" width="100%">
+      <tbody>
+        <tr>
+          <td bgcolor="#3366cc"><img width="1" height="1" alt=""></td>
+        </tr>
+      </tbody>
+    </table>
+    <table width="100%" border="0" cellpadding="1" cellspacing="0" bgcolor="#e5ecf9">
+      <tbody>
+        <tr>
+          <td bgcolor="#e5ecf9" nowrap="nowrap">
+            <table width="100%" border="0" cellpadding="1" cellspacing="0" bgcolor="#e5ecf9">
+              <tbody>
+                <tr>
+                  <td bgcolor="#e5ecf9" nowrap="nowrap">
+                    <font size="+1" color="#000000"><b>Web</b></font>
+                  </td>
+                  <td bgcolor="#e5ecf9" align="right" nowrap="nowrap">
+                    <font size="-1" color="#000000">Results <b><%= search.page_start %></b> - <b><%= search.result_count %></b> of about <b><%= search.total_result_count.toLocaleString() %></b> for <b><%= query.q %></b>. (<b><%= search.response_time %></b> seconds)</font>
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+    <div>
+      <% if (!search.results.length) { %>
+        <p>Your search - <b><%= query.q %></b> - did not match any documents.</p>
+        <p>Suggestions</p>
+        <ul>
+          <li>Make sure that all words are spelled correctly.</li>
+          <li>Try different keywords.</li>
+          <li>Try more general keywords.</li>
+          <li>Try fewer keywords.</li>
+        </ul>
+      <% } else { %>
+        <% for (var i=0; i<search.results.length; i++) { %>
+        <% const result = search.results[i] %>
+        <p>
+          <a href="<%= result.url %>"><%- utils.highlight(result.title, query.q) %></a>
+          <br />
+          <font size="-1">
+            <%- utils.highlight(result.content, query.q) || "The summary for this page is not available." %>
+            <br>
+            <font color="#008000"><%= result.parsed_url.host + result.parsed_url.path %> - </font>
+            <a class="fl" href="https://web.archive.org/web/<%= new Date().getFullYear() %>if_/<%= result.parsed_url.host + result.parsed_url.path %>">Cached</a> - <a class="fl" href="/search?q=related:<%= result.parsed_url.host + result.parsed_url.path %>">Similar pages</a>
+          </font>
+        </p>
+        <% } %>
+      <% } %>
+    </div>
+    <br clear="all" />
+    <div class="n">
+      <table border="0" cellpadding="0" width="1%" cellspacing="0" align="center">
+        <tbody>
+          <tr align="center" valign="top">
+            <% var start = page - 4 %>
+            <% var end = page + 5 %>
+            <% if (page <= 5)  { %>
+              <% start = 1 %>
+              <% end = 10 %>
+            <% } %>
+            <% if (page == 1) { %>
+              <td valign="bottom" nowrap="nowrap"><font size="-1">Result&nbsp;Page:&nbsp;</font></td>
+              <td><img src="/static/assets/images/2000/nav_first.gif" width="18" height="26" alt="" /><br /></td>
+            <% } else { %>
+              <% params.set("page", page - 1) %>
+              <td nowrap="nowrap">
+                <a href="/search?<%= params.toString() %>"
+                  ><img src="/static/assets/images/2000/nav_previous.gif" width="68" height="26" alt="" border="0" /><br /><span class="b">Previous</span></a
+                >
+              </td>
+            <% } %>
+            <% for (var i=start; i<=end; i++) { %>
+              <% if (page == i) { %>
+              <td><img src="/static/assets/images/2000/nav_current.gif" width="16" height="26" alt="" /><br /><span class="i"><%= i %></span></td>
+              <% } else { %>
+                <% params.set("page", i) %>
+                <td>
+                  <a href="/search?<%= params.toString() %>"
+                    ><img src="/static/assets/images/2000/nav_page.gif" width="16" height="26" alt="" border="0" /><br /><%= i %></a
+                  >
+                </td>
+              <% } %>
+            <% } %>
+            <% params.set("page", page + 1) %>
+            <td nowrap="nowrap">
+              <a href="/search?<%= params.toString() %>"
+                ><img src="/static/assets/images/2000/nav_next.gif" width="100" height="26" alt="" border="0" /><br /><span class="b">Next</span></a
+              >
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+    <center>
+      <br clear="all" /><br />
+      <table border="0" cellpadding="3" cellspacing="0" align="center">
+        <tbody>
+          <tr>
+            <td nowrap="nowrap">
+              <form method="GET" action="/search" <%= preferences.results_tab == "true" ? "target=_blank" : "" %>>
+                <font size="-1"
+                  ><input type="text" name="q" size="31" maxlength="2048" value="<%= query.q %>" /> <input type="submit" value="Search" /></font
+                >
+              </form>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </center>
+    <center>
+      <p></p>
+      <hr class="z" />
+      <table width="100%" cellpadding="2" cellspacing="0" border="0">
+        <tbody>
+          <tr>
+            <td class="t" align="center">
+              <font size="-1">
+                <font color="#666666">©<%= preferences.copyright %> Google</font> -
+                <a href="/">Google&nbsp;Home</a> -
+                <a href="https://ads.google.com/">Advertise&nbsp;with&nbsp;Us</a> -
+                <a href="https://business.google.com/">Business&nbsp;Solutions</a> -
+                <a href="https://about.google/products/">Services&nbsp;&amp;&nbsp;Tools</a> -
+                <a href="https://jobs.google.com/">Jobs,&nbsp;Press,&nbsp;&amp;&nbsp;Help</a>
+              </font>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </center>
+  </body>
+</html>

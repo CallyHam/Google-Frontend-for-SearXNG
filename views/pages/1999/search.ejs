@@ -1,0 +1,76 @@
+<html>
+  <head>
+    <% const params = new URLSearchParams(query) %>
+    <% const page = parseInt(query.page) || 1 %>
+    <title>Google Search: <%= query.q %></title>
+  </head>
+  <body bgcolor="#ffffff" text="#000000" link="#0000ee" vlink="#ff0000" alink="#000099">
+    <form method="GET" action="/search">
+      <center>
+        <a href="/"><img border="0" src="/static/assets/images/1999/google.jpg" alt="Google! " /></a><br />
+        <input type="text" name="q" size="31" maxlength="255" value="<%= query.q %>" /><br />
+        <select name="num">
+          <option value="10" selected="selected">10 results</option>
+          <option value="30">30 results</option>
+          <option value="100">100 results</option>
+        </select>
+        <input type="submit" value="Google Search" /><input type="submit" name="lucky" value="I'm feeling lucky" />
+      </center>
+    </form>
+    <hr />
+    <div>
+      <% if (!search.results.length) { %>
+        <p>Your search - <b><%= query.q %></b> - did not match any documents.</p>
+        <p>Suggestions</p>
+        <ul>
+          <li>Make sure that all words are spelled correctly.</li>
+          <li>Try different keywords.</li>
+          <li>Try more general keywords.</li>
+          <li>Try fewer keywords.</li>
+        </ul>
+      <% } else { %>
+        <% for (var i=0; i<search.results.length; i++) { %>
+        <% const result = search.results[i] %>
+          <p>
+            <a href="<%= result.url %>"><%- result.title %></a>
+            <br>
+            <font size="-1">
+            <%- result.content %>
+            <br>
+            <font color="green"><%= result.parsed_url.host + result.parsed_url.path %></font>&nbsp;<a href="https://web.archive.org/web/<%= new Date().getFullYear() %>if_/<%= result.parsed_url.host + result.parsed_url.path %>">Cached</a>
+            </font>
+            <br>
+          </p>
+        <% } %>
+      <% } %>
+    </div>
+    <center>
+      <font size="-1">
+        <% var start = page - 4 %>
+        <% var end = page + 5 %>
+        <% if (page <= 5)  { %>
+          <% start = 1 %>
+          <% end = 10 %>
+        <% } %>
+        <% if (page > 1) { %>
+          <% params.set("page", page - 1) %>
+          <a href="/search?<%= params.toString() %>">Previous</a>
+        <% } %>
+        <% for (var i=start; i<=end; i++) { %>
+          <% if (page == i) { %>
+          <b><%= i %></b>
+          <% } else { %>
+            <% params.set("page", i) %>
+            <a href="/search?<%= params.toString() %>"><%= i %></a>
+          <% } %>
+        <% } %>
+        <% params.set("page", page + 1) %>
+        <a href="/search?<%= params.toString() %>">Next</a>
+      </font>
+    </center>
+    <hr />
+    <center>
+      <p><font size="-1">Copyright ©<%= preferences.copyright %> Google Inc.</font></p>
+    </center>
+  </body>
+</html>

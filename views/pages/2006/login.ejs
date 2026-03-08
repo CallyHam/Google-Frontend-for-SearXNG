@@ -1,0 +1,182 @@
+<html>
+  <head>
+    <title>Google Accounts</title>
+    <link rel="stylesheet" href="/static/assets/css/2006/login.css" />
+    <link rel="shortcut icon" href="/static/assets/images/2000/favicon.ico" type="image/x-icon" />
+  </head>
+  <body dir="ltr">
+    <table cellpadding="0" width="100%" cellspacing="0" border="0">
+      <tbody>
+        <tr>
+          <td align="right" nowrap="nowrap">
+            <font size="-1" face="Arial, sans-serif">
+              <a href="/">Google Home</a> |
+              <a href="/accounts/login">Sign In</a>
+            </font>
+          </td>
+        </tr>
+        <tr>
+          <td><img width="1" alt="" height="1" /></td>
+        </tr>
+      </tbody>
+    </table>
+    <table cellpadding="2" width="100%" cellspacing="0" border="0">
+      <tbody>
+        <tr>
+          <td colspan="2"><img width="1" alt="" height="2" /></td>
+        </tr>
+        <tr>
+          <td width="1%" valign="top">
+            <a href="/accounts">
+              <img src="/static/assets/images/2006/googleaccountslogo.gif" alt="Google" border="0" align="left" />
+            </a>
+          </td>
+          <td valign="top">
+            <table cellpadding="0" width="100%" cellspacing="0" border="0">
+              <tbody>
+                <tr>
+                  <td colspan="2"><img width="1" alt="" height="15" /></td>
+                </tr>
+                <tr bgcolor="#3366cc">
+                  <td><img width="1" alt="" height="1" /></td>
+                </tr>
+                <tr bgcolor="#e5ecf9">
+                  <td style="padding-left: 4px; padding-bottom: 3px; padding-top: 2px; font-family: arial, sans-serif"><b>Google Accounts</b></td>
+                </tr>
+                <tr>
+                  <td colspan="2"><img width="1" alt="" height="5" /></td>
+                </tr>
+              </tbody>
+            </table>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+    <table width="80%" align="center" border="0">
+      <tbody>
+        <tr>
+          <td valign="top">
+            <div style="font-size: 83%">
+              <b> Access Google services with your Google Account. </b> <br /><br />
+              A Google Account is the key that unlocks the world of Google. <a href="/nonexistent">Learn more.</a> <br /><br />
+              With just your email address and chosen password, you can access numerous Google services, including: <br /><br />
+              <table cellpadding="4" border="0">
+                <tbody>
+                  <tr>
+                    <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>
+                    <td><img src="/static/assets/images/2006/alerts.gif" alt="Google Alerts" /></td>
+                    <td style="font-size: 83%"><a href="/nonexistent">Google Alerts</a> <br />Receive news and search results via email</td>
+                  </tr>
+                  <tr>
+                    <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>
+                    <td><img src="/static/assets/images/2006/groups.gif" alt="Google Groups" /></td>
+                    <td style="font-size: 83%"><a href="/nonexistent">Google Groups</a> <br />Create mailing lists and discussion groups</td>
+                  </tr>
+                  <tr>
+                    <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>
+                    <td><img src="/static/assets/images/2006/msh.gif" alt="Personalized Search" /></td>
+                    <td style="font-size: 83%"><a href="/nonexistent">Personalized Search</a> <br />Get the search results most relevant to you</td>
+                  </tr>
+                  <tr>
+                    <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>
+                    <td><img src="/static/assets/images/2006/froogle.gif" alt="Froogle Shopping List" /></td>
+                    <td style="font-size: 83%"><a href="/nonexistent">Froogle Shopping List</a> <br />Shop smarter with wishlists of your favorite products</td>
+                  </tr>
+                </tbody>
+              </table>
+              <br />
+              <b>Do you already use any of these services?</b><br />
+              If so, you already have a Google Account. You can sign in on the right.
+            </div>
+          </td>
+          <td style="padding-left: 10px" align="center" valign="top">
+            <table cellpadding="5" width="100%" cellspacing="3" border="0" class="form-noindent">
+              <tbody>
+                <tr>
+                  <td bgcolor="#e8eefa" style="text-align: center" nowrap="nowrap" valign="top">
+                    <form action="/accounts/auth" id="gaia_loginform" method="post">
+                      <table cellpadding="1" cellspacing="0" align="center" border="0" id="gaia_table">
+                        <!-- LoginBoxLogoText.quaddamage=VERSION2 -->
+                        <tbody>
+                          <tr>
+                            <td colspan="2" align="center">
+                              <font size="-1"> Sign in with your </font>
+                              <!-- LoginBoxGoogleAccountLogo.retro=false -->
+                              <table>
+                                <tbody>
+                                  <tr>
+                                    <td valign="top"><img src="/static/assets/images/2006/google_transparent.gif" alt="Google" /></td>
+                                    <td valign="middle">
+                                      <font size="+0"><b>Account</b></font>
+                                    </td>
+                                  </tr>
+                                </tbody>
+                              </table>
+                            </td>
+                          </tr>
+                          <tr>
+                            <td colspan="2" align="center">
+                              <div class="errorbox-good"></div>
+                            </td>
+                          </tr>
+                          <tr>
+                            <td nowrap="nowrap">
+                              <div align="right"><span class="gaia le lbl"> Email: </span></div>
+                            </td>
+                            <td><input type="text" name="email" class="gaia le val" id="Email" size="18" /></td>
+                          </tr>
+                          <tr>
+                            <td></td>
+                            <td align="left"></td>
+                          </tr>
+                          <tr>
+                            <td align="right"><span class="gaia le lbl"> Password: </span></td>
+                            <td><input type="password" class="gaia le val" id="Passwd" size="18" /></td>
+                          </tr>
+                          <tr>
+                            <td></td>
+                            <td align="left"></td>
+                          </tr>
+                          <tr>
+                            <td align="right" valign="top"><input type="checkbox" name="remember" value="yes" checked="checked" />&nbsp;</td>
+                            <td><span class="gaia le rem"> Remember me on this computer. </span></td>
+                          </tr>
+                          <tr>
+                            <td></td>
+                            <td align="left"><input type="submit" value="Sign in" class="gaia le button" /></td>
+                          </tr>
+                          <tr id="ga-fprow">
+                            <td colspan="2" align="center" height="33.0" valign="bottom" nowrap="nowrap" class="gaia le fpwd">
+                              <a href="/accounts/recovery" target="_top"> Forgot your password? </a>
+                            </td>
+                          </tr>
+                        </tbody>
+                      </table>
+                    </form>
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+            <br />
+            <table cellpadding="6" width="100%" cellspacing="3" border="0" class="form-noindent">
+              <tbody>
+                <tr>
+                  <td bgcolor="#e8eefa" style="font-size: 83%" align="center">
+                    <b>Don't have a Google Account? </b><br />
+                    <a href="/accounts/create"> <b>Create an account now</b> </a>
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+    <br /><br />
+    <div align="center" class="footer">
+      <font color="#666666"> ©<%= preferences.copyright %> Google </font> - <a href="/">Google Home</a> - <a href="https://policies.google.com/terms">Terms of Service</a> -
+      <a href="https://policies.google.com/privacy">Privacy Policy</a> -
+      <a href="https://support.google.com/accounts/#topic=3382296">Help</a>
+    </div>
+  </body>
+</html>

@@ -1,0 +1,100 @@
+<html>
+  <head>
+    <title>Preferences</title>
+    <link rel="stylesheet" href="/static/assets/css/2001/preferences.css" />
+    <link rel="shortcut icon" href="/static/assets/images/2000/favicon.ico" type="image/x-icon" />
+  </head>
+  <body alink="#ff0000" bgcolor="#ffffff" link="#0000cc" text="#000000" vlink="#551a8b">
+    <form method="post" action="/preferences/set">
+      <table width="92%" border="0" cellpadding="0" cellspacing="2">
+        <tbody>
+          <tr>
+            <td rowspan="2" width="1%">
+              <a href="/"><img alt="Google" border="0" height="78" src="/static/assets/images/2000/logo-left.gif" width="200" /></a>
+            </td>
+            <td valign="bottom" align="right">
+              <font face="arial,sans-serif" size="-1"> <a href="/nonexistent">Preferences Help</a> | <a href="https://about.google">All About Google</a></font>
+            </td>
+          </tr>
+          <tr>
+            <td valign="top">
+              <table cellspacing="2" cellpadding="2" border="0" width="100%">
+                <tbody>
+                  <tr bgcolor="#3366cc">
+                    <td>
+                      <font face="arial,sans-serif" color="#ffffff"><b>&nbsp;Preferences</b></font>
+                    </td>
+                  </tr>
+                </tbody>
+              </table>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+      <table width="92%" border="0" cellspacing="0" cellpadding="2">
+        <tbody>
+          <tr bgcolor="#CBDCED">
+            <td>
+              <font size="-1">
+                &nbsp;<font face="arial,sans-serif"> <b>Save</b> your preferences when finished and <b>return to search</b>.</font></font
+              >
+            </td>
+            <td align="right">
+              <font face="arial,sans-serif" size="-1"><input type="submit" value="Save Preferences" name="submit2" /></font>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+      <br />
+      <table width="92%" cellpadding="0" cellspacing="0">
+        <tbody>
+          <tr bgcolor="CBDCED">
+            <td><img src="/static/assets/images/2000/cleardot.gif" height="1" /></td>
+          </tr>
+        </tbody>
+      </table>
+      <% Object.values(groups).forEach(group => { %>
+        <table border="0" cellspacing="0" cellpadding="4">
+          <tbody>
+            <tr valign="top">
+              <td width="175" nowrap="nowrap">
+                <font size="-1" face="arial,sans-serif"><b><%= group.name %></b></font>
+              </td>
+              <td>
+                <% group.options.forEach(id => { %>
+                  <% const option = options[id] %>
+                  <% const value = cookies[id] ?? option.default %>
+                  <%- include("../../partials/2001/preferencesField", { id, option, value }) %>
+                <% }) %>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+        <table width="92%" cellpadding="0" cellspacing="0">
+          <tbody>
+            <tr bgcolor="CBDCED">
+              <td><img src="/static/assets/images/2000/cleardot.gif" height="1" /></td>
+            </tr>
+          </tbody>
+        </table>
+      <% }); %>
+      <table width="92%" border="0" cellspacing="0" cellpadding="2">
+        <tbody>
+          <tr bgcolor="#CBDCED">
+            <td>
+              <font size="-1">
+                &nbsp;<font face="arial,sans-serif"> <b>Save</b> your preferences when finished and <b>return to search</b>.</font></font
+              >
+            </td>
+            <td align="right">
+              <font face="arial,sans-serif" size="-1"><input type="submit" value="Save Preferences"/></font>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+      <br />
+      <div align="center"><font face="arial,sans-serif" size="-1" color="#6f6f6f">©<%= preferences.copyright %> Google</font></div>
+      <p>&nbsp;</p>
+    </form>
+  </body>
+</html>

@@ -1,0 +1,22 @@
+{
+  "name": "google-frontend-for-searxng",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "dev": "node --watch . ",
+    "prod": "node ."
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs",
+  "dependencies": {
+    "cookie-parser": "^1.4.7",
+    "dotenv": "^17.3.1",
+    "ejs": "^4.0.1",
+    "express": "^5.2.1",
+    "open": "^11.0.0",
+    "prettier": "^3.8.1"
+  }
+}

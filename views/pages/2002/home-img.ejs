@@ -1,0 +1,81 @@
+<html>
+  <head>
+    <title>Google Image Search</title>
+    <link rel="stylesheet" href="/static/assets/css/2002/home-img.css" />
+    <link rel="shortcut icon" href="/static/assets/images/2000/favicon.ico" type="image/x-icon" />
+  </head>
+  <body bgcolor="#ffffff" text="#000000" link="#0000cc" vlink="#551a8b" alink="#ff0000">
+    <center>
+      <table cellpadding="0" cellspacing="0" border="0">
+        <tbody>
+          <tr>
+            <td align="right" valign="bottom"><img src="/static/assets/images/2002/hp0.gif" width="158" height="78" alt="Google Image Search" /></td>
+            <td valign="bottom"><img src="/static/assets/images/2002/hp1.gif" width="50" height="78" alt="" /></td>
+            <td valign="bottom"><img src="/static/assets/images/2002/hp2.gif" width="68" height="78" alt="" /></td>
+          </tr>
+          <tr>
+            <td class="h" align="right" valign="top"><b>Image Search</b></td>
+            <td valign="top"><img src="/static/assets/images/2002/hp3.gif" width="50" height="32" alt="" /></td>
+            <td valign="top" class="h"><font color="#6f6f6f" style="font-size: 16px">&nbsp;</font></td>
+          </tr>
+        </tbody>
+      </table>
+      <br />
+      <table border="0" cellspacing="0" cellpadding="0">
+        <tbody>
+          <tr>
+            <td width="15">&nbsp;</td>
+            <td id="0" bgcolor="#efefef" align="center" width="120" nowrap="nowrap">
+              <a id="0a" class="q" href="/"><font size="-1">Web</font></a>
+            </td>
+            <td width="15">&nbsp;</td>
+            <td id="1" bgcolor="#224499" align="center" width="120" nowrap="nowrap">
+              <font color="#ffffff" size="-1"><b>Images</b></font>
+            </td>
+            <td width="15">&nbsp;</td>
+            <td id="2" bgcolor="#efefef" align="center" width="120" nowrap="nowrap">
+              <a id="2a" class="q" href="/nonexistent"><font size="-1">Groups</font></a>
+            </td>
+            <td width="15">&nbsp;</td>
+            <td id="3" bgcolor="#efefef" align="center" width="120" nowrap="nowrap">
+              <a id="3a" class="q" href="/nonexistent"><font size="-1">Directory</font></a>
+            </td>
+            <td width="15">&nbsp;</td>
+          </tr>
+          <tr>
+            <td colspan="10" bgcolor="#224499"><img width="1" height="1" alt="" /></td>
+          </tr>
+        </tbody>
+      </table>
+      <br />
+      <form method="get" action="/search" <%= preferences.results_tab == "true" ? "target=_blank" : "" %>>
+        <table cellspacing="0" cellpadding="0">
+          <tbody>
+            <tr valign="middle" align="center">
+              <td width="150">&nbsp;</td>
+              <td>
+                <input maxlength="256" size="40" name="q" />
+                <input type="hidden" name="category" value="images" />
+                <input type="submit" value="Google Search" />
+              </td>
+              <td align="left" width="150">
+                <font size="-2">&nbsp;•&nbsp;<a href="/nonexistent">Advanced&nbsp;Image&nbsp;Search</a><br />&nbsp;•&nbsp;<a href="/nonexistent">Image&nbsp;Search&nbsp;Help</a></font>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </form>
+      <p>
+        <font color="#224499"><b>The most comprehensive image search on the web.</b></font
+        ><br /><br /><br /><font size="-1"
+          ><a href="https://ads.google.com/">Advertise&nbsp;with&nbsp;Us</a> - <a href="https://business.google.com/">Search&nbsp;Solutions</a> -
+          <a href="https://news.google.com/">News and Resources</a> - <a href="http://jobs.google.com">Jobs,&nbsp;Press,&nbsp;Cool&nbsp;Stuff...</a></font
+        >
+      </p>
+      <p>
+        <font size="-2">©<%= preferences.copyright %> Google</font
+        ><font size="-2"> - Searching <%= parseInt(preferences.total).toLocaleString() %> image<%= parseInt(preferences.total) !== 1 ? "s" : "" %></font>
+      </p>
+    </center>
+  </body>
+</html>

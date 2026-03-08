@@ -1,0 +1,23 @@
+<html>
+  <head>
+    <title>Image Search</title>
+  </head>
+  <body>
+    <center>
+      <h1>Image Search</h1>
+      <div>
+        <a href="/">Web</a>
+        &nbsp;
+        <b>Images</b>
+      </div>
+      <form method="get" action="/search" <%= preferences.resultstab == "true" ? "target=_blank" : "" %>>
+        <input type="search" name="q" autocomplete="off" maxlength="256" size="40" />
+        <input type="hidden" name="category" value="images" />
+        <br />
+        <input type="submit" value="Search"/>
+      </form>
+      <br />
+      <p><a href="/preferences">Preferences</a></p>
+    </center>
+  </body>
+</html>

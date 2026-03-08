@@ -1,0 +1,71 @@
+<html>
+  <head>
+    <% const params = new URLSearchParams(query) %>
+    <% const page = parseInt(query.page) || 1 %>
+    <title><%= query.q %> - Image Search</title>
+  </head>
+  <body>
+    <form method="GET" action="/search" <%= preferences.results_tab == "true" ? "target=_blank" : "" %>>
+      <a href="/imghp"><b>Image Search</b></a>&nbsp;
+      <input type="text" name="q" size="20" maxlength="256" value="<%= query.q %>"> 
+      <input type="hidden" name="category" value="images" />
+      <input type="submit" value="Search"> 
+      &nbsp;
+      <a href="/preferences">Preferences</a>
+    </form>
+    <hr>
+    <a href="/search?q=<%= query.q %>">General</a>
+    <b>Images</b>
+    <hr>
+    <div>
+      <% if (!search.results.length) { %>
+        <p>Your search - <b><%= query.q %></b> - did not match any images.</p>
+        <p>Suggestions</p>
+        <ul>
+          <li>Make sure that all words are spelled correctly.</li>
+          <li>Try different keywords.</li>
+          <li>Try more general keywords.</li>
+          <li>Try fewer keywords.</li>
+        </ul>
+      <% } else { %>
+        <% for (var i=0; i<search.results.length; i++) { %>
+        <% const result = search.results[i] %>
+          <div style="display: inline-block;">
+            <center>
+              <a href="<%= result.image %>" target="_blank">
+                <img src="<%= result.thumbnail %>" height="100">
+              </a>
+              <br>
+              <b><%= result.title.length > 20 ? "..." + result.title.slice(result.title.length - 20) : result.title %></b>
+              <br>
+              <font color="green"><%= result.parsed_url.host %></font>
+            </center>
+          </div>
+        <% } %>
+      <% } %>
+    </div>
+    <hr>
+    <div>
+      <% var start = page - 4 %>
+      <% var end = page + 5 %>
+      <% if (page <= 5)  { %>
+        <% start = 1 %>
+        <% end = 10 %>
+      <% } %>
+      <% if (page > 1) { %>
+        <% params.set("page", page - 1) %>
+        <a href="/search?<%= params.toString() %>">Previous</a>
+      <% } %>
+      <% for (var i=start; i<=end; i++) { %>
+        <% if (page == i) { %>
+        <b><%= i %></b>
+        <% } else { %>
+          <% params.set("page", i) %>
+          <a href="/search?<%= params.toString() %>"><%= i %></a>
+        <% } %>
+      <% } %>
+      <% params.set("page", page + 1) %>
+      <a href="/search?<%= params.toString() %>">Next</a>
+    </div>
+  </body>
+</html>

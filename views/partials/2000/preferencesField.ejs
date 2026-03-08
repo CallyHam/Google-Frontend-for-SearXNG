@@ -1,0 +1,26 @@
+<% if (option.type === "text")  { %>
+  <font face="arial,sans-serif">
+    <%= option.summary %>:&nbsp;
+    <input type="text" name="<%= id %>" maxlength="<%= option.maxlength %>" size="25" value="<%= value %>" autocomplete="off" />
+  </font>
+<% } else if (option.type === "number") { %>
+  <font face="arial,sans-serif">
+    <%= option.summary %>:&nbsp;
+    <input type="number" name="<%= id %>" min="<%= option.min %>" max="<%= option.max %>" value="<%= value %>" inputmode="numeric" />
+  </font>
+<% } else if (option.type === "checkbox") { %>
+  <font face="arial,sans-serif">
+    <input type="checkbox" name="<%= id %>" value="true" <%= value == "true" ? "checked" : "" %>/>
+    <%= option.summary %>
+  </font>
+<% } else if (option.type === "select") { %>
+  <font face="arial,sans-serif">
+    <%= option.summary %>:&nbsp;
+    <select name="<%= id %>">
+      <% option.choices.forEach(choice => { %>
+        <option value="<%= choice.value %>" <%= value === choice.value ? "selected" : "" %>><%= choice.name %></option>
+      <% }) %>>
+    </select>
+  </font>
+<% } %>
+<br/>

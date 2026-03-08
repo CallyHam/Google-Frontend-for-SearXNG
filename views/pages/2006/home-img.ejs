@@ -1,0 +1,79 @@
+<html>
+  <head>
+    <title>Google Image Search</title>
+    <link rel="stylesheet" href="/static/assets/css/2006/home.css" />
+    <link rel="shortcut icon" href="/static/assets/images/2000/favicon.ico" type="image/x-icon" />
+    <script src="/static/assets/js/2006/more.js"></script>
+  </head>
+  <body bgcolor="#ffffff" text="#000000" link="#0000cc" vlink="#551a8b" alink="#ff0000" onload="sf()" topmargin="3" marginheight="3">
+    <center>
+      <div align="right" nowrap="" style="padding-bottom: 4px" width="100%">
+        <% if (cookies.email) { %>
+          <font size="-1"><b><%= cookies.email %></b>&nbsp;|&nbsp;<a href="/accounts/logout">Sign out</a></font>
+        <% } else { %>
+        <font size="-1"><a href="/login">Sign in</a></font>
+        <% } %>
+      </div>
+      <img alt="Google" height="110" src="/static/assets/images/2004/images_hp.gif" width="276" /><br /><br />
+      <form action="/search" method="get" <%= preferences.results_tab == "true" ? "target=_blank" : "" %>>
+        <table border="0" cellspacing="0" cellpadding="4">
+          <tbody>
+            <tr>
+              <td nowrap="nowrap">
+                <font size="-1">
+                  <a class="q" href="/" onclick="return qs(this);">Web</a>&nbsp;&nbsp;&nbsp;&nbsp;<b>Images</b>&nbsp;&nbsp;&nbsp;&nbsp;<a class="q" href="/nonexistent" onclick="return qs(this);"
+                    >Video</a
+                  >&nbsp;&nbsp;&nbsp;&nbsp;<a class="q" href="/nonexistent" onclick="return qs(this);">News</a>&nbsp;&nbsp;&nbsp;&nbsp;<a
+                    class="q"
+                    href="https://maps.google.com/"
+                    onclick="return qs(this);"
+                    >Maps</a
+                  >&nbsp;&nbsp;&nbsp;&nbsp;<b
+                    ><a
+                      href="https://about.google/products/"
+                      class="q"
+                      onclick="
+                        this.blur();
+                        return togDisp(event);
+                      "
+                      >more&nbsp;»</a
+                    ></b
+                  >
+                  <span name="more" id="more" style="display: none" onclick="stopB(event)"
+                    ><a href="#" onclick="return togDisp(event);"><img border="0" src="/static/assets/images/2006/x2.gif" width="12" height="12" alt="Close menu" align="right" class="cb" /></a
+                    ><a class="q" href="/nonexistent" onclick="return qs(this);">Books</a><br /><a class="q" href="/nonexistent" onclick="return qs(this);">Froogle</a><br /><a
+                      class="q"
+                      href="/nonexistent"
+                      onclick="return qs(this);"
+                      >Groups</a
+                    ><br /><a href="https://about.google/products/" class="q"><b>even more »</b></a></span
+                  >
+                </font>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+        <table cellpadding="0" cellspacing="0">
+          <tbody>
+            <tr valign="top">
+              <td width="25%">&nbsp;</td>
+              <td align="center" nowrap="nowrap">
+                <input name="category" type="hidden" value="images" /><input maxlength="2048" name="q" size="40" title="Search Images" /> <input type="submit" value="Search Images" />
+              </td>
+              <td nowrap="nowrap" width="25%">
+                <font size="-2">&nbsp;&nbsp;<a href="/nonexistent">Advanced&nbsp;Image&nbsp;Search</a><br />&nbsp;&nbsp;<a href="/preferences">Preferences</a></font>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </form>
+      <p>
+        <font color="#224499"><b>The most comprehensive image search on the web.</b></font
+        ><br /><br /><br /><font size="-1"
+          ><a href="https://ads.google.com/">Advertising&nbsp;Programs</a> - <a href="https://business.google.com/">Business Solutions</a> - <a href="https://about.google">About Google</a></font
+        >
+      </p>
+      <p><font size="-2">©<%= preferences.copyright %> Google</font></p>
+    </center>
+  </body>
+</html>

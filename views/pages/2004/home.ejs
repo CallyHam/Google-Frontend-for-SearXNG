@@ -1,0 +1,57 @@
+<html>
+  <head>
+    <title>Google</title>
+    <link rel="stylesheet" href="/static/assets/css/2004/home.css" />
+    <link rel="shortcut icon" href="/static/assets/images/2000/favicon.ico" type="image/x-icon" />
+  </head>
+  <body bgcolor="#ffffff" text="#000000" link="#0000cc" vlink="#551a8b" alink="#ff0000">
+    <center>
+      <table border="0" cellspacing="0" cellpadding="0">
+        <tbody>
+          <tr>
+            <td><img src="/static/assets/images/2002/logo.gif" width="276" height="110" alt="Google" /></td>
+          </tr>
+        </tbody>
+      </table>
+      <br />
+      <form action="/search" method="get" <%= preferences.results_tab == "true" ? "target=_blank" : "" %>>
+        <table border="0" cellspacing="0" cellpadding="4">
+          <tbody>
+            <tr>
+              <td nowrap="nowrap" class="q">
+                <font size="-1"
+                  ><b><font color="#000000">Web</font></b
+                  >&nbsp;&nbsp;&nbsp;&nbsp;<a id="1a" class="q" href="/imghp">Images</a>&nbsp;&nbsp;&nbsp;&nbsp;<a id="2a" class="q" href="/nonexistent">Groups</a>&nbsp;&nbsp;&nbsp;&nbsp;<a
+                    id="4a"
+                    class="q"
+                    href="/nonexistent"
+                    >News</a
+                  >&nbsp;&nbsp;&nbsp;&nbsp;<a id="5a" class="q" href="/nonexistent">Froogle</a>&nbsp;&nbsp;&nbsp;&nbsp;<b><a href="https://about.google/products/" class="q">more&nbsp;»</a></b></font
+                >
+              </td>
+            </tr>
+          </tbody>
+        </table>
+        <table cellspacing="0" cellpadding="0">
+          <tbody>
+            <tr>
+              <td width="25%">&nbsp;</td>
+              <td align="center"><input maxlength="256" size="55" name="q" /><br /><input type="submit" value="Google Search" /><input type="submit" name="lucky" value="I'm Feeling Lucky" /></td>
+              <td valign="top" nowrap="nowrap" width="25%">
+                <font size="-2"
+                  >&nbsp;&nbsp;<a href="/advanced_search">Advanced&nbsp;Search</a><br />&nbsp;&nbsp;<a href="/preferences">Preferences</a><br />&nbsp;&nbsp;<a href="/nonexistent"
+                    >Language Tools</a
+                  ></font
+                >
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </form>
+      <br /><br /><font size="-1"
+        ><a href="https://ads.google.com/">Advertising&nbsp;Programs</a> - <a href="https://business.google.com/">Business&nbsp;Solutions</a> - <a href="https://about.google">About Google</a></font
+      >
+      <p><font size="-2">©<%= preferences.copyright %> Google - Searching <%= parseInt(preferences.total).toLocaleString() %> web page<%= parseInt(preferences.total) !== 1 ? "s" : "" %></font></p>
+    </center>
+  </body>
+</html>

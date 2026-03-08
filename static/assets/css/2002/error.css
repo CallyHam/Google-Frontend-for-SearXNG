@@ -1,0 +1,30 @@
+body {
+  font-family: arial, sans-serif;
+}
+div.nav {
+  margin-top: 1ex;
+}
+div.nav A {
+  font-size: 10pt;
+  font-family: arial, sans-serif;
+}
+span.nav {
+  font-size: 10pt;
+  font-family: arial, sans-serif;
+  font-weight: bold;
+}
+div.nav A,
+span.big {
+  font-size: 12pt;
+  color: #0000cc;
+}
+div.nav A {
+  font-size: 10pt;
+  color: black;
+}
+A.l:link {
+  color: #6f6f6f;
+}
+A.u:link {
+  color: green;
+}

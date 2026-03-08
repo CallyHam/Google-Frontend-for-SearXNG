@@ -1,0 +1,233 @@
+<html>
+  <head>
+    <title>Google Advanced Search</title>
+    <link rel="stylesheet" href="/static/assets/css/2001/advanced-search.css" />
+    <link rel="shortcut icon" href="/static/assets/images/2000/favicon.ico" type="image/x-icon" />
+  </head>
+  <body alink="#ff0000" bgcolor="#ffffff" link="#0000cc" text="#000000" vlink="#551a8b">
+    <font face="arial,sans-serif"></font>
+    <form method="GET" action="/advanced_search/v2">
+      <font face="arial,sans-serif">
+        <table width="99%" border="0" cellpadding="0" cellspacing="2">
+          <tbody>
+            <tr>
+              <td rowspan="2" width="1%">
+                <a href="/"><img alt="Google" border="0" height="78" src="/static/assets/images/2000/logo-left.gif" width="200" /></a>
+              </td>
+              <td valign="bottom" align="right">
+                <font face="arial,sans-serif" size="-1"><a href="/nonexistent">Search&nbsp;Tips</a> | <a href="http://about.google/">All About Google</a></font>
+              </td>
+            </tr>
+            <tr>
+              <td valign="top">
+                <table cellspacing="2" cellpadding="2" border="0" width="100%">
+                  <tbody>
+                    <tr bgcolor="#3366cc">
+                      <td>
+                        <font face="arial,sans-serif" color="white"><b>&nbsp;Advanced Search</b></font>
+                      </td>
+                    </tr>
+                  </tbody>
+                </table>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+        <!------Advanced Search-------->
+        <table cellpadding="6" cellspacing="0" border="0" width="99%">
+          <tbody>
+            <tr>
+              <td>
+                <font face="arial,sans-serif"><b>Advanced Web Search</b></font>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+        <table cellspacing="0" cellpadding="3" border="0" width="99%">
+          <tbody>
+            <tr bgcolor="#cbdced">
+              <td>
+                <table width="100%" cellspacing="0" cellpadding="0" border="0">
+                  <tbody>
+                    <tr bgcolor="#cbdced">
+                      <td>
+                        <table width="100%" cellspacing="0" cellpadding="2" border="0">
+                          <tbody>
+                            <tr>
+                              <td valign="top" width="15%">
+                                <font face="arial,sans-serif" size="-1"><br /><b>Find results </b></font>
+                              </td>
+                              <td width="85%">
+                                <table width="100%" cellpadding="2" border="0" cellspacing="0">
+                                  <tbody>
+                                    <tr>
+                                      <td>
+                                        <font size="-1" face="arial,sans-serif">with <b>all</b> of the words</font>
+                                      </td>
+                                      <td>
+                                        <input type="text" name="as_q" size="25" />
+                                      </td>
+                                      <td valign="top" rowspan="4">
+                                        <font size="-1" face="arial,sans-serif">
+                                          <input type="submit" value="Google Search" />
+                                        </font>
+                                      </td>
+                                    </tr>
+                                    <tr>
+                                      <td nowrap="nowrap">
+                                        <font size="-1" face="arial,sans-serif">with the <b>exact phrase</b></font>
+                                      </td>
+                                      <td><input type="text" size="25" name="as_epq" /></td>
+                                    </tr>
+                                    <tr>
+                                      <td nowrap="nowrap">
+                                        <font size="-1" face="arial,sans-serif">with <b>any</b> of the words</font>
+                                      </td>
+                                      <td><input type="text" size="25" name="as_oq" /></td>
+                                    </tr>
+                                    <tr>
+                                      <td nowrap="nowrap">
+                                        <font size="-1" face="arial,sans-serif"><b>without</b> the words</font>
+                                      </td>
+                                      <td><input type="text" size="25" name="as_eq" /></td>
+                                    </tr>
+                                  </tbody>
+                                </table>
+                              </td>
+                            </tr>
+                          </tbody>
+                        </table>
+                      </td>
+                    </tr>
+                    <tr>
+                      <td>
+                        <table width="100%" cellspacing="0" cellpadding="2" border="0">
+                          <tbody>
+                            <tr bgcolor="#ffffff">
+                              <td width="15%">
+                                <font size="-1" face="arial,sans-serif"><b>Occurrences</b></font>
+                              </td>
+                              <td nowrap="nowrap" width="40%"><font size="-1" face="arial,sans-serif">Return results where my terms occur</font></td>
+                              <td>
+                                <font size="-1" face="arial,sans-serif">
+                                  <select name="as_occt">
+                                    <option value="any" selected="selected">anywhere in the page</option>
+                                    <option value="title">in the title of the page</option>
+                                    <option value="url">in the url of the page</option>
+                                  </select>
+                                </font>
+                              </td>
+                            </tr>
+                          </tbody>
+                        </table>
+                      </td>
+                    </tr>
+                    <tr bgcolor="#ffffff">
+                      <td>
+                        <table width="100%" cellpadding="2" cellspacing="0" border="0">
+                          <tbody>
+                            <tr>
+                              <td width="15%">
+                                <font size="-1" face="arial,sans-serif"><b>Domains</b></font>
+                              </td>
+                              <td width="40%" nowrap="nowrap">
+                                <font size="-1" face="arial,sans-serif">
+                                  <select name="as_dt">
+                                    <option value="i" selected="selected">Only</option>
+                                    <option value="e">Don't</option>
+                                  </select>
+                                  return results from the site or domain
+                                </font>
+                              </td>
+                              <td>
+                                <table cellpadding="0" cellspacing="0" border="0">
+                                  <tbody>
+                                    <tr>
+                                      <td><input size="25" name="as_sitesearch" /></td>
+                                    </tr>
+                                    <tr>
+                                      <td valign="top" nowrap="nowrap">
+                                        <font face="arial,sans-serif" size="-1">
+                                          <i>e.g. google.com, .org&nbsp; <a href="/nonexistent">More&nbsp;info</a></i>
+                                        </font>
+                                      </td>
+                                    </tr>
+                                  </tbody>
+                                </table>
+                              </td>
+                            </tr>
+                          </tbody>
+                        </table>
+                      </td>
+                    </tr>
+                  </tbody>
+                </table>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+        <br /><br />
+        <!------Page-Specific Search-------->
+        <table cellpadding="6" cellspacing="0" border="0">
+          <tbody>
+            <tr>
+              <td>
+                <font face="arial,sans-serif"><b>Page-Specific Search</b></font>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+        <table cellspacing="0" cellpadding="3" border="0" width="99%">
+          <tbody>
+            <tr bgcolor="#cbdced">
+              <td>
+                <table width="100%" cellpadding="0" cellspacing="0" border="0">
+                  <tbody>
+                    <tr>
+                      <td>
+                        <table width="100%" cellpadding="2" cellspacing="0" border="0">
+                          <form method="GET" action="/advanced_search/v2"></form>
+                          <tbody>
+                            <tr bgcolor="#ffffff">
+                              <td width="15%">
+                                <font size="-1" face="arial,sans-serif"><b>Similar</b></font>
+                              </td>
+                              <td width="40%" nowrap="nowrap"><font size="-1" face="arial,sans-serif">Find pages similar to the page </font></td>
+                              <td>
+                                <table cellpadding="0" cellspacing="0" border="0">
+                                  <tbody>
+                                    <tr>
+                                      <td>
+                                        <input type="text" name="as_rq" size="30" />
+                                        <font size="-1" face="arial,sans-serif">
+                                          <input type="submit" value="Search" />
+                                        </font>
+                                      </td>
+                                    </tr>
+                                    <tr>
+                                      <td valign="top" nowrap="nowrap">
+                                        <font face="arial,sans-serif" size="-1"><i>e.g. www.google.com/help.html</i></font>
+                                      </td>
+                                    </tr>
+                                  </tbody>
+                                </table>
+                              </td>
+                            </tr>
+                          </tbody>
+                        </table>
+                      </td>
+                    </tr>
+                  </tbody>
+                </table>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+        <p></p>
+        <center>
+          <font color="#6f6f6f" size="-1">©<%= preferences.copyright %> Google</font>
+        </center>
+      </font>
+    </form>
+  </body>
+</html>

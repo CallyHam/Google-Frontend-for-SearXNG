@@ -1,0 +1,42 @@
+<html>
+  <head>
+    <title>Advanced Search</title>
+  </head>
+  <body>
+    <h1>Advanced Search</h1>
+    <form method="get" action="/advanced_search/search">
+      <hr />
+      <b>Search Terms</b>
+      <br />
+      <label>All: </label>
+      <input type="text" name="as_q" size="25" />
+      <br />
+      <label>Exact: </label>
+      <input type="text" size="25" name="as_epq" />
+      <br />
+      <label>Any: </label>
+      <input type="text" size="25" name="as_oq" />
+      <br />
+      <label>Exclude: </label>
+      <input type="text" size="25" name="as_eq" />
+      <br />
+      <hr />
+      <b>Location</b>
+      <br />
+      <label>Find search terms: </label>
+      <select name="as_occt">
+        <option value="any" selected="selected">Anywhere</option>
+        <option value="title">In Title</option>
+        <option value="url">In URL</option>
+      </select>
+      <br />
+      <hr />
+      <b>Domains</b>
+      <br />
+      <label>Site search: </label>
+      <input size="25" name="as_sitesearch" />
+      <hr />
+      <input type="submit" value="Google Search" />
+    </form>
+  </body>
+</html>

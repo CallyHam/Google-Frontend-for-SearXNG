@@ -1,0 +1,13 @@
+<html>
+  <head>
+    <title><%= statusText %></title>
+  </head>
+  <body>
+    <h1><%= status %> <%= statusText %></h1>
+    <% if (status === 404) { %>
+      The requested URL <%= message %> was not found on this server.
+    <% } else { %>
+      <%= message %>
+    <% } %>
+  </body>
+</html>

@@ -1,0 +1,44 @@
+<html>
+  <head>
+    <title>Google</title>
+    <link rel="shortcut icon" href="/static/assets/images/2000/favicon.ico" type="image/x-icon" />
+  </head>
+  <body bgcolor="#FFFFFF" text="#000000" link="#000099" vlink="#003366" alink="#000099">
+    <center>
+      <img src="/static/assets/images/2000/Title_HomePage.gif" width="555" height="130" border="0" usemap="#map1" alt="Google" />
+      <map name="map1">
+        <area shape="RECT" coords="434,62,541,94" href="https://about.google/" alt="About Google" />
+      </map>
+    </center>
+    <table width="100%" border="0">
+      <tbody>
+        <tr>
+          <td align="center">
+            <center>
+              <form action="/search" method="get" <%= preferences.results_tab == "true" ? "target=_blank" : "" %>>
+                <font face="arial,sans-serif" size="-1">Search the web using Google</font><br />
+                <input type="text" framewidth="4" name="q" size="40" />
+                <br />
+                <nobr>
+                  <input type="submit" value="Google Search" />
+                  <input type="submit" name="lucky" value="I'm Feeling Lucky" />
+                </nobr>
+                <br />
+              </form>
+            </center>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+    <p>&nbsp;</p>
+    <p align="center">
+      <font face="arial,sans-serif" size="-2">
+        ©<%= preferences.copyright %> Google Inc.&nbsp; 
+        <a href="https://about.google/">About</a> |
+        <a href="/nonexistent">Search Tips</a> |
+        <a href="/nonexistent">Feedback</a> |
+        <a href="https://jobs.google.com/">We're Hiring!</a>
+      </font>
+    </p>
+  </body>
+</html>

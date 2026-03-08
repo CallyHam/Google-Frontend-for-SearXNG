@@ -1,0 +1,29 @@
+body,
+td,
+a,
+p,
+.h {
+  font-family: arial, sans-serif;
+}
+.h {
+  font-size: 20px;
+}
+.h {
+  color: #3366cc;
+}
+.q {
+  color: #00c;
+}
+.cb {
+  margin: 0.5ex;
+}
+#more {
+  position: absolute;
+  background: #fff;
+  border: 1px solid #369;
+  margin: -0.5ex 1.5ex;
+  padding: 0 0 0.5ex 0.8ex;
+  width: 16ex;
+  line-height: 1.9;
+  z-index: 1000;
+}

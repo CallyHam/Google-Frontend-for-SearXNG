@@ -1,0 +1,25 @@
+<html>
+  <head>
+    <title>Search</title>
+  </head>
+  <body>
+    <center>
+      <h1>Search</h1>
+      <b>Web</b>
+      &nbsp;
+      <a href="/imghp">Images</a>
+      <form method="get" action="/search" <%= preferences.results_tab == "true" ? "target=_blank" : "" %>>
+        <input type="search" name="q" autocomplete="off" maxlength="256" size="40" />
+        <br />
+        <input type="submit" value="Search"/>
+        <input type="submit" name="lucky" value="Top Result" />
+      </form>
+      <br />
+      <p>
+        <a href="/preferences">Preferences</a>
+        -
+        <a href="/advanced_search">Advanced Search</a>
+      </p>
+    </center>
+  </body>
+</html>

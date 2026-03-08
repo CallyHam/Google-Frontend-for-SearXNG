@@ -1,0 +1,79 @@
+<html>
+  <head>
+    <title>Google</title>
+    <link rel="stylesheet" href="/static/assets/css/2007/home.css" />
+    <link rel="shortcut icon" href="/static/assets/images/2000/favicon.ico" type="image/x-icon" />
+    <script src="/static/assets/js/2007/gbar.js"></script>
+    <script></script>
+  </head>
+  <body bgcolor="#ffffff" text="#000000" link="#0000cc" vlink="#551a8b" alink="#ff0000" topmargin="3" marginheight="3">
+    <div id="gbar">
+      <nobr>
+        <div class="gb1">Web</div>
+        <div class="gb1"><a href="/imghp">Images</a></div>
+        <div class="gb1"><a href="/nonexistent">Video</a></div>
+        <div class="gb1"><a href="/nonexistent">News</a></div>
+        <div class="gb1"><a href="https://maps.google.com/">Maps</a></div>
+        <div class="gb1"><a href="https://mail.google.com/">Gmail</a></div>
+        <div class="gb3">
+          <a
+            href="https://about.google/products/"
+            onclick="
+              this.blur();
+              gbar.tg(event);
+              return false;
+            "
+            ><u>more</u> <span style="font-size: 11px">&#9660;</span></a
+          >
+        </div>
+        <div class="gb2" style="display: none; left: 290px; top: 25px"><a href="/nonexistent">Blog Search</a></div>
+        <div class="gb2" style="display: none; left: 290px; top: 45px"><a href="http://www.blogger.com/">Blogger</a></div>
+        <div class="gb2" style="display: none; left: 290px; top: 65px"><a href="https://books.google.com/">Books</a></div>
+        <div class="gb2" style="display: none; left: 290px; top: 85px"><a href="https://calendar.google.com/">Calendar</a></div>
+        <div class="gb2" style="display: none; left: 290px; top: 105px"><a href="https://docs.google.com/">Documents</a></div>
+        <div class="gb2" style="display: none; left: 290px; top: 125px"><a href="https://www.google.com/finance/">Finance</a></div>
+        <div class="gb2" style="display: none; left: 290px; top: 145px"><a href="/nonexistent">Groups</a></div>
+        <div class="gb2" style="display: none; left: 290px; top: 165px"><a href="https://labs.google/">Labs</a></div>
+        <div class="gb2" style="display: none; left: 290px; top: 185px"><a href="https://www.orkut.com/">Orkut</a></div>
+        <div class="gb2" style="display: none; left: 290px; top: 205px"><a href="https://patents.google.com/">Patents</a></div>
+        <div class="gb2" style="display: none; left: 290px; top: 225px"><a href="https://photos.google.com/">Photos</a></div>
+        <div class="gb2" style="display: none; left: 290px; top: 245px"><a href="https://www.google.com/shopping">Products</a></div>
+        <div class="gb2" style="display: none; left: 290px; top: 265px"><a href="/nonexistent">Reader</a></div>
+        <div class="gb2" style="display: none; left: 290px; top: 285px"><a href="https://scholar.google.com/">Scholar</a></div>
+      </nobr>
+    </div>
+    <div id="gbh"></div>
+    <div align="right" id="guser" style="font-size: 84%; padding: 0 0 4px" width="100%">
+      <% if (cookies.email) { %>
+        <nobr><b><%= cookies.email %></b> | <a href="/nonexistent">Web History</a> | <a href="/accounts/myaccount">My Account</a> | <a href="/accounts/logout">Sign out</a></nobr>
+      <% } else { %>
+        <nobr><a href="/nonexistent">iGoogle</a> | <a href="/accounts/login">Sign in</a></nobr>
+      <% } %>
+    </div>
+    <center>
+      <br clear="all" id="lgpd" /><img alt="Google" height="110" src="/static/assets/images/2002/logo.gif" width="276" /><br /><br />
+      <form action="/search" method="get" <%= preferences.results_tab == "true" ? "target=_blank" : "" %>>
+        <table cellpadding="0" cellspacing="0">
+          <tbody>
+            <tr valign="top">
+              <td width="25%">&nbsp;</td>
+              <td align="center" nowrap="nowrap">
+                <input maxlength="2048" name="q" size="55" title="Google Search" /><br /><input type="submit" value="Google Search" /><input name="lucky" type="submit" value="I'm Feeling Lucky" />
+              </td>
+              <td nowrap="nowrap" width="25%">
+                <font size="-2"
+                  >&nbsp;&nbsp;<a href="/advanced_search">Advanced Search</a><br />&nbsp;&nbsp;<a href="/preferences">Preferences</a><br />&nbsp;&nbsp;<a href="/nonexistent">Language Tools</a></font
+                >
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </form>
+      <br /><br /><font size="-1"
+        ><a href="https://ads.google.com/">Advertising&nbsp;Programs</a> - <a href="https://business.google.com/">Business Solutions</a> - <a href="https://about.google/">About Google</a></font
+      >
+      <p><font size="-2">©<%= preferences.copyright %> Google</font></p>
+    </center>
+    <div id="gbi" style="display: none; left: 289px; top: 24px; height: 280px"></div>
+  </body>
+</html>
