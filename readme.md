@@ -6,7 +6,7 @@ A configurable frontend for SearXNG instances made to look like Google (1999 - 2
 
 - Install [Node.js](https://nodejs.org/en/download)
 - Clone repository `git clone https://github.com/CallyHam/Google-Frontend-for-SearXNG`
-- Open a terminal/command prompt in the cloned repository
+- Open a terminal/command prompt in the cloned repository folder
 - Run `npm i`
 - Run `npm run dev` or `npm run prod`
 - Visit `http://127.0.0.1:3000`
