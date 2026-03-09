@@ -1,0 +1,189 @@
+<html>
+  <head>
+    <% const params = new URLSearchParams(query) %>
+    <% const page = parseInt(query.page) || 1 %>
+    <title>Google Search: <%= query.q %> </title>
+    <link rel="stylesheet" href="/static/assets/css/2000/search.css" />
+    <link rel="shortcut icon" href="/static/assets/images/2000/favicon.ico" type="image/x-icon" />
+  </head>
+  <body bgcolor="#ffffff" text="#000000" link="#0000cc" vlink="#551A8B" alink="#ff0000">
+    <div>
+      <table border="0" cellpadding="2" cellspacing="0">
+        <tbody>
+          <tr>
+            <td rowspan="2"><a href="/"><img border="0" src="/static/assets/images/2000/logo-small.gif" width="200" height="78" alt="Google "></a></td>
+            <td nowrap="nowrap"><font face="arial,sans-serif" size="-1">&nbsp;&nbsp;&nbsp;&nbsp;<a href="/advanced_search">Advanced Search</a>&nbsp;&nbsp;&nbsp;&nbsp;<a href="/preferences">Preferences</a>&nbsp;&nbsp;&nbsp;&nbsp;<a href="/help">Search&nbsp;Tips</a></font></td>
+          </tr>
+          <tr>
+            <td align="left" valign="middle">
+              <form method="get" action="/search" <%= preferences.results_tab == "true" ? "target=_blank" : "" %> style="margin: 0;">
+                <input type="text" name="q" size="31" maxlength="256" value="<%= query.q %>"> 
+                <input type="submit" value="Google Search"> 
+                <input type="submit" value="I'm Feeling Lucky" />
+                <input type="hidden" name="category" value="images" />
+                <br>
+              </form>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+      <table width="100%" cellpadding="2" cellspacing="0" border="0">
+        <tbody>
+          <tr>
+            <td bgcolor="#3366cc" align="left" nowrap="nowrap">
+              <font face="arial,sans-serif" size="-1" color="white">Searched images for <b><%= query.q %></b>.</font>
+            </td>
+            <td bgcolor="#3366cc" align="right" nowrap="nowrap">
+              <font face="arial,sans-serif" size="-1" color="white">Results <b><%= search.page_start %> to <%= search.result_count %></b> of about <b><%= search.total_result_count %></b>.  Search took <b><%= search.response_time %></b> seconds.</font>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+      <table width="100%" border="0" cellpadding="4" cellspacing="0">
+        <tbody>
+          <% if (!search.results.length) { %>
+            <p>Your search - <b><%= query.q %></b> - did not match any images.</p>
+            <p>Suggestions</p>
+            <ul>
+              <li>Make sure that all words are spelled correctly.</li>
+              <li>Try different keywords.</li>
+              <li>Try more general keywords.</li>
+              <li>Try fewer keywords.</li>
+            </ul>
+          <% } else { %>
+            <% for (var i=0; i<search.results.length; i++) { %>
+              <% if (i % 4 === 0) { %>
+                <tr width="25%">
+              <% } %>
+              <% const result = search.results[i] %>
+              <td width="25%" valign="center">
+                <center>
+                  <a href="<%= result.image %>" target="_blank">
+                    <img src="<%= result.thumbnail %>" width="150" border="2">
+                  </a>
+                  <br>
+                  <b><%= result.title.length > 20 ? "..." + result.title.slice(result.title.length - 20) : result.title %></b>
+                  <br>
+                  <font size="-1" color="green"><%= result.parsed_url.host %></font>
+                </center>
+              </td>
+              <% if (i % 4 === 3 || i === search.results.length - 1) { %>
+                </tr>
+              <% } %>
+            <% } %>
+          <% } %>
+        </tbody>
+      </table>
+      <center>
+        <div class="nav">
+          <p>
+          <table border="0" cellpadding="0" width="10%" cellspacing="0">
+            <tbody>
+              <tr align="center" valign="top">
+                <% var start = page - 4 %>
+                <% var end = page + 5 %>
+                <% if (page <= 5)  { %>
+                  <% start = 1 %>
+                  <% end = 10 %>
+                <% } %>
+                <% if (page == 1) { %>
+                  <td valign="bottom" nowrap="nowrap"><font face="arial,sans-serif" size="-1">Result&nbsp;Page:&nbsp;</font></td>
+                  <td><img src="/static/assets/images/2000/nav_first.gif" alt=""></td>
+                <% } else { %>
+                  <% params.set("page", page - 1) %>
+                  <td nowrap="nowrap"><a href="/search?<%= params.toString() %>"><img src="/static/assets/images/2000/nav_previous.gif" alt="" border="0"><br><span class="big"><b>Previous</b></span></a></td>
+                <% } %>
+                <% for (var i=start; i<=end; i++) { %>
+                  <% if (page == i) { %>
+                  <td><img src="/static/assets/images/2000/nav_current.gif" alt=""><br><span class="nav"><font color="#A90A08"><%= i %></font></span></td>
+                  <% } else { %>
+                    <% params.set("page", i) %>
+                    <td nowrap="nowrap"><a href="/search?<%= params.toString() %>"><img src="/static/assets/images/2000/nav_page.gif" alt="" border="0"><br><%= i %></a></td>
+                  <% } %>
+                <% } %>
+                <% params.set("page", page + 1) %>
+                <td nowrap="nowrap"><a href="/search?<%= params.toString() %>"><img src="/static/assets/images/2000/nav_next.gif" alt="" border="0"><br><span class="big"><b>Next</b></span></a></td>
+              </tr>
+            </tbody>
+          </table>
+          </p>
+        </div>
+      </center>
+      <br clear="all">
+      <center>
+        <table border="0" cellpadding="0" cellspacing="0">
+          <tbody>
+            <tr>
+              <td nowrap="nowrap">
+                <form method="get" action="/search" <%= preferences.results_tab == "true" ? "target=_blank" : "" %>>
+                  <center>
+                    <font face="arial,sans-serif">
+                      <small>
+                        <input type="text" name="q" size="31" maxlength="256" value="<%= query.q %>">
+                        <input type="submit" value="Google Search">
+                        <input type="hidden" name="category" value="images" />
+                      </small>
+                    </font>
+                  </center>
+                </form>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </center>
+      <center>
+        <font size="-1">
+          Try your query on: 
+          <a href="https://oldavista.com/search?q=<%= query.q %>">AltaVista</a>
+          <a href="https://search.excite.com/serp?q=<%= query.q %>">Excite</a>
+          <a href="https://www.lycos.com/search?kw=<%= query.q %>">Lycos</a>
+          <a href="https://search.yahoo.com/search?p=<%= query.q %>">Yahoo!</a>
+          <br>
+        </font>
+      </center>
+      <p></p>
+      <center>
+        <table width="100%" cellpadding="2" cellspacing="0" border="0">
+          <tbody>
+            <tr>
+              <td width="100%" bgcolor="#3366cc">
+                <font face="arial,sans-serif" color="white">
+                  <font size="-1">
+                    <center>
+                      <a href="/nonexistent">
+                        <font color="white">Google Web Directory</font></a>
+                        -
+                        <a href="https://jobs.google.com/">
+                          <font color="white">Cool Jobs</font>
+                        </a> 
+                        -
+                        <a href="https://ads.google.com">
+                          <font color="white">Advertise with Us!</font>
+                        </a> 
+                        -
+                        <a href="https://business.google.com/">
+                          <font color="white">Add Google to your Site</font>
+                        </a>
+                        -
+                        <a href="/nonexistent">
+                          <font color="white">Google in your Language</font>
+                        </a>
+                        - 
+                        <b>
+                          <a href="https://about.google">
+                            <font color="white">All About Google</font>
+                          </a>
+                        </b>
+                      </center>
+                  </font>
+                </font>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+        <br>
+        <font size="-1" color="#6f6f6f">©<%= preferences.copyright %> Google</font>
+      </center>
+    </div>
+  </body>
+</html>

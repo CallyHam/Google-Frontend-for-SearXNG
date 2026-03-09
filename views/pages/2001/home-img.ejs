@@ -1,0 +1,21 @@
+<html>
+  <head>
+    <title>Google</title>
+    <link rel="stylesheet" href="/static/assets/css/2001/home.css" />
+    <link rel="shortcut icon" href="/static/assets/images/2000/favicon.ico" type="image/x-icon" />
+  </head>
+  <body bgcolor="#ffffff" text="#000000" link="#0000cc" vlink="551a8b" alink="#ff0000">
+    <center>
+      <img src="/static/assets/images/2001/title_images.gif" width="280" height="141" alt="Google Image Search" /><br /><br /><br />
+      <font size="-1">
+        <form action="/search" method="get" name="f">
+          <input type="text" name="q" size="55" maxlength="256" /><br />
+          <input name="btnG" type="submit" value="Google Search" /><input type="submit" value="I'm Feeling Lucky" />
+          <input type="hidden" name="category" value="images" />
+        </form>
+      </font>
+      <br /><br /><br /><font size="-1"><a href="/nonexistent">Image Search Info</a> - <a href="/nonexistent">Image Search FAQ</a> - <a href="/">Google Home</a></font>
+      <p><font size="-2">©<%= preferences.copyright %> Google</font></p>
+    </center>
+  </body>
+</html>

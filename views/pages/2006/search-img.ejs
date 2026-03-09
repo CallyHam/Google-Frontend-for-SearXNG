@@ -97,10 +97,10 @@
               <tr>
             <% } %>
             <% const result = search.results[i] %>
-            <td width="25%" valign="center" height="100px">
+            <td width="25%" valign="middle">
               <center>
                 <a href="<%= result.image %>" target="_blank">
-                  <img src="<%= result.thumbnail %>" border="2" width="200">
+                  <img src="<%= result.thumbnail %>" border="2" width="150">
                 </a>
                 <br>
                 <b><%= result.title.length > 20 ? "..." + result.title.slice(result.title.length - 20) : result.title %></b>
