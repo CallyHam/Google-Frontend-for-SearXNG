@@ -602,9 +602,8 @@ li.g {
   padding-bottom: 5px !important;
 }
 .tsf-p {
-  margin-right: 272px;
+  width: 704px;
   margin-left: 168px;
-  max-width: 711px;
 }
 .mbi {
   margin-bottom: -1px;
@@ -620,8 +619,8 @@ li.g {
 }
 #subform_ctrl {
   font-size: 11px;
+  width: 695px;
   margin-left: 176px;
-  margin-right: 272px;
   max-width: 695px;
   min-height: 26px;
   padding-top: 3px;
