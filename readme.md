@@ -1,6 +1,6 @@
 # Google Frontend for SearXNG
 
-A configurable frontend for SearXNG instances made to look like Google (1999 - 2007).
+A configurable frontend for SearXNG instances made to look like Google (1999 - 2010).
 
 ## Usage
 
