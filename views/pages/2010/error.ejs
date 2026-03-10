@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Error <%= status %> (<%= statusText %>)!!1</title>
+    <link rel="stylesheet" href="/static/assets/css/2010/error.css" />
+    <link rel="shortcut icon" href="/static/assets/images/2010/favicon.ico" type="image/x-icon" />
+  </head>
+  <body>
+    <a href="/" id="g"><img src="/static/assets/images/2010/logo_sm.gif" alt="Google" /></a>
+    <p><b><%= status %>.</b> <ins>That’s an error.</ins></p>
+    <% if (status === 404) { %>
+      <p>The requested URL <code><%= message %></code> was not found on this server. <ins>That’s all we know.</ins></p>
+    <% } else { %>
+      <%= message %>
+    <% } %>
+  </body>
+</html>

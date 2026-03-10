@@ -1,0 +1,288 @@
+<html>
+  <head>
+    <title>Google Advanced Search</title>
+    <link rel="stylesheet" href="/static/assets/css/2010/advanced-search.css" />
+    <link rel="shortcut icon" href="/static/assets/images/2010/favicon.ico" type="image/x-icon" />
+    <script src="/static/assets/js/2010/gbar.js"></script>
+  </head>
+  <body>
+    <div style="font-size:119%;margin-top:3px">
+      <div id="gog">
+        <div id="gbar">
+          <nobr>
+            <b class="gb1">Web</b> <a href="/imghp" class="gb1">Images</a>
+            <a href="https://www.google.com/videohp" class="gb1">Videos</a>
+            <a href="https://maps.google.com/maps" class="gb1">Maps</a>
+            <a href="https://news.google.com/home" class="gb1">News</a>
+            <a href="https://www.google.com/shopping" class="gb1">Shopping</a>
+            <a href="https://mail.google.com/mail/" class="gb1">Gmail</a>
+            <a
+              href="https://about.google/products/"
+              onclick="
+                this.blur();
+                gbar.tg(event, 'gbi');
+                return !1;
+              "
+              aria-haspopup="true"
+              class="gb3"
+            >
+              <u>more</u> <small>▼</small>
+            </a>
+            <div class="gbm" id="gbi" style="left: 341px; right: auto; top: 24px; visibility: hidden">
+              <a href="https://books.google.com/bkshp" class="gb2">Books</a>
+              <a href="https://www.google.com/finance" class="gb2">Finance</a>
+              <a href="https://translate.google.com/" class="gb2">Translate</a>
+              <a href="https://scholar.google.com/" class="gb2">Scholar</a>
+              <a href="https://blogsearch.google.com/" class="gb2">Blogs</a>
+              <div class="gb2">
+                <div class="gbd"></div>
+              </div>
+              <a href="https://www.youtube.com/" class="gb2">YouTube</a>
+              <a href="https://calendar.google.com/" class="gb2">Calendar</a>
+              <a href="https://photos.google.com/" class="gb2">Photos</a>
+              <a href="https://docs.google.com/" class="gb2">Documents</a>
+              <a href="https://www.google.com/reader/about/" class="gb2">Reader</a>
+              <a href="https://sites.google.com/" class="gb2">Sites</a>
+              <a href="https://groups.google.com/" class="gb2">Groups</a>
+              <div class="gb2">
+                <div class="gbd"></div>
+              </div>
+              <a href="https://about.google/products/" class="gb2">even more »</a>
+            </div>
+          </nobr>
+        </div>
+        <% if (cookies.email) { %>
+          <div id="guser" width="100%">
+            <nobr>
+              <b><%= cookies.email %></b> |
+              <span id="gbe"><a href="/ig" class="gb4">iGoogle</a> | </span>
+              <a
+                href="https://about.google/products/"
+                onclick="
+                  this.blur();
+                  gbar.tg(event, 'gbu');
+                  return !1;
+                "
+                aria-haspopup="true"
+                class="gb3"
+              >
+                <u>Settings</u> <small>▼</small>
+              </a> |
+              <div class="gbm" id="gbu" style="right: 63px; left: auto; top: 24px; visibility: hidden">
+                <a href="/preferences" class="gb2">Search settings</a>
+                <a href="/accounts/manage" class="gb2">Google Account settings</a>
+              </div>
+              <a href="/accounts/logout" class="gb4">Sign out</a>
+            </nobr>
+          </div>
+        <% } else { %>
+          <div id="guser" width="100%">
+            <nobr>
+              <span id="gbn" class="gbi"></span>
+              <span id="gbf" class="gbf"></span>
+              <span id="gbe"><a href="/ig" class="gb4">iGoogle</a> | </span>
+              <a href="/preferences" class="gb4">Search settings</a> |
+              <a href="/accounts/login" class="gb4">Sign in</a>
+            </nobr>
+          </div>
+        <% } %>
+        <div class="gbh" style="left: 0"></div>
+        <div class="gbh" style="right: 0"></div>
+      </div>
+    </div>
+    <table width="100%" border="0" cellpadding="0" cellspacing="2" style="margin-top: 1em">
+      <tbody>
+        <tr>
+          <td width="1%">
+            <a href="/"><img border="0" src="/static/assets/images/2010/logo_sm.gif" width="150" height="55" alt="Go to Google Home" /></a>
+          </td>
+          <td>&nbsp;</td>
+          <td>
+            <table cellspacing="0" cellpadding="0" width="100%" style="border-top: solid 1px #3366cc">
+              <tbody>
+                <tr>
+                  <td class="page-title">&nbsp;Advanced Search</td>
+                  <td align="right" nowrap="nowrap" bgcolor="#d5ddf3"><a href="/nonexistent">Advanced Search Tips</a> | <a href="https://about.google/">About Google</a>&nbsp;</td>
+                </tr>
+              </tbody>
+            </table>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+    <table cellspacing="0" cellpadding="0" width="100%">
+      <tbody>
+        <tr>
+          <td align="center">
+            <table cellspacing="0" cellpadding="0" style="margin-top: 1em; width: 80%">
+              <tbody>
+                <tr>
+                  <td align="left">
+                    <div class="outer-box">
+                      <div class="qbuilder-env" style="display: none">
+                        <div id="gen-query"></div>
+                      </div>
+                      <form method="GET" action="/advanced_search/v3" class="block">
+                        <div style="width: 100%">
+                          <h3>Find web pages that have...</h3>
+                          <table cellspacing="0" cellpadding="2" width="100%">
+                            <tbody>
+                              <tr>
+                                <td class="label"><label>all these words:</label></td>
+                                <td class="input"><input type="text" name="as_q" style="width: 100%" /></td>
+                                <td id="query_tip"></td>
+                              </tr>
+                              <tr>
+                                <td class="label"><label>this exact wording or phrase:</label></td>
+                                <td class="input"><input type="text" name="as_epq" style="width: 100%" /></td>
+                                <td id="phrase-tip"></td>
+                              </tr>
+                              <tr>
+                                <td class="label"><label>one or more of these words:</label></td>
+                                <td id="or-cell" class="input">
+                                  <table cellpadding="0" cellspacing="0" border="0" width="100%">
+                                    <tbody>
+                                      <tr>
+                                        <td width="31%"><input type="text" style="width: 100%" id="as_oq0" name="as_oq0"/></td>
+                                        <td class="hint">&nbsp;OR&nbsp;</td>
+                                        <td width="31%"><input type="text" style="width: 100%" id="as_oq1" name="as_oq1" /></td>
+                                        <td class="hint">&nbsp;OR&nbsp;</td>
+                                        <td width="31%"><input type="text" style="width: 100%" id="as_oq2" name="as_oq2"/></td>
+                                      </tr>
+                                    </tbody>
+                                  </table>
+                                </td>
+                                <td id="or-tip"></td>
+                              </tr>
+                              <tr>
+                                <td colspan="3">
+                                  <h3 style="margin-top: 0.7em">But don't show pages that have...</h3>
+                                </td>
+                              </tr>
+                              <tr>
+                                <td class="label"><label>any of these unwanted words:</label></td>
+                                <td class="input"><input type="text" name="as_eq" style="width: 100%" /></td>
+                                <td id="not-tip"></td>
+                              </tr>
+                            </tbody>
+                          </table>
+                          <h3 style="margin-top: 1em">Need more tools?</h3>
+                          <table cellspacing="0" cellpadding="2" width="100%">
+                            <tbody>
+                              <tr>
+                                <td class="label"><label>File type:</label></td>
+                                <td>
+                                  <input style="width: 50%" name="as_filetype" />
+                                </td>
+                              </tr>
+                              <tr>
+                                <td class="label"><label>Search within a site or domain:</label></td>
+                                <td><input type="text" style="width: 50%" name="as_sitesearch" /></td>
+                              </tr>
+                              <tr>
+                                <td><span class="comment">&nbsp;</span></td>
+                                <td><span class="comment">(e.g. youtube.com, .edu)</span></td>
+                              </tr>
+                            </tbody>
+                          </table>
+                          <div class="toggle link" id="opt-handle">
+                            <div id="opt-icon" class="plus"></div>
+                            <span class="link">Date, usage rights, numeric range, and more</span>
+                          </div>
+                          <table cellspacing="0" cellpadding="2" width="100%" id="opt" style="display: none">
+                            <tbody>
+                              <tr>
+                                <td class="label"><label>Where your keywords show up:</label></td>
+                                <td>
+                                  <select name="as_occt">
+                                    <option value="any" selected="selected">anywhere in the page</option>
+                                    <option value="title">in the title of the page</option>
+                                    <option value="body">in the text of the page</option>
+                                    <option value="url">in the URL of the page</option>
+                                    <option value="links">in links to the page</option>
+                                  </select>
+                                </td>
+                              </tr>
+                              <tr>
+                                <td class="label"><label>Numeric range:</label></td>
+                                <td>
+                                  <table cellspacing="0" cellpadding="0" width="50%">
+                                    <tbody>
+                                      <tr>
+                                        <td><input type="text" style="width: 100%" name="as_nlo" /></td>
+                                        <td style="width: 1.5em" align="center"><span class="hint">..</span></td>
+                                        <td><input type="text" style="width: 100%" name="as_nhi" /></td>
+                                      </tr>
+                                    </tbody>
+                                  </table>
+                                </td>
+                              </tr>
+                              <tr>
+                                <td>&nbsp;</td>
+                                <td><span class="comment">(e.g. $1500..$3000)</span></td>
+                              </tr>
+                            </tbody>
+                          </table>
+                          <table cellspacing="0" cellpadding='0style="margin-top:.5em"' width="100%">
+                            <tbody>
+                              <tr>
+                                <td style="text-align: right"><input type="submit" value="Advanced Search" /></td>
+                              </tr>
+                            </tbody>
+                          </table>
+                        </div>
+                      </form>
+                    </div>
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+    <table cellspacing="0" cellpadding="0" width="100%">
+      <tbody>
+        <tr>
+          <td align="center">
+            <table cellspacing="0" cellpadding="0" style="width: 80%">
+              <tbody>
+                <tr>
+                  <td align="left">
+                    <div id="related" style="margin-top: 1em; display: block" class="block">
+                      <div style="width: 100%">
+                        <h3>Page-specific tools:</h3>
+                        <table cellspacing="0" cellpadding="2" style="width: 100%">
+                          <tbody>
+                            <tr>
+                              <td class="label"><label>Find pages similar to the page:</label></td>
+                              <td>
+                                <form method="GET" action="/advanced_search/v3">
+                                  <table cellspacing="0" cellpadding="0" width="100%">
+                                    <tbody>
+                                      <tr>
+                                        <td><input type="text" name="as_rq" style="width: 100%" /></td>
+                                        <td style="width: 5.5em" align="right"><input type="submit" value="Search" /></td>
+                                      </tr>
+                                    </tbody>
+                                  </table>
+                                </form>
+                              </td>
+                            </tr>
+                          </tbody>
+                        </table>
+                      </div>
+                    </div>
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+    <p></p>
+    <center><font size="-1">©<%= preferences.copyright %> Google</font></center>
+    <script src="/static/assets/js/2010/opt.js"></script>
+  </body>
+</html>

@@ -73,6 +73,7 @@ async function fetchSearchResults(query, preferences, locale) {
     response_time: responseTime,
     template: template,
     results: [],
+    suggestions: search.suggestions,
   };
 
   for (const item of search.results) {

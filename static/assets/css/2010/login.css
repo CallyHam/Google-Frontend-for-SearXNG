@@ -1,0 +1,183 @@
+body {
+  font-family: arial, sans-serif;
+  background-color: #fff;
+  margin-top: 2;
+}
+.c {
+  width: 4;
+  height: 4;
+}
+a:link {
+  color: #00c;
+}
+a:visited {
+  color: #551a8b;
+}
+a:active {
+  color: #f00;
+}
+.form-noindent {
+  background-color: #fff;
+  border: 1px solid #c3d9ff;
+}
+.gaia.le.lbl {
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: smaller;
+}
+.gaia.le.fpwd {
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 70%;
+}
+.gaia.le.chusr {
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 70%;
+}
+.gaia.le.val {
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: smaller;
+}
+.gaia.le.button {
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: smaller;
+}
+.gaia.le.rem {
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: smaller;
+}
+
+.gaia.captchahtml.desc {
+  font-family: arial, sans-serif;
+  font-size: smaller;
+}
+.gaia.captchahtml.cmt {
+  font-family: arial, sans-serif;
+  font-size: smaller;
+  font-style: italic;
+}
+body {
+  font-family: arial, sans-serif;
+  margin: 0;
+  padding: 13px 15px 15px;
+}
+.body {
+  margin: 0;
+}
+div.errorbox-good {
+}
+
+div.errorbox-bad {
+}
+
+div.errormsg {
+  color: red;
+  font-size: smaller;
+  font-family: arial, sans-serif;
+}
+font.errormsg {
+  color: red;
+  font-size: smaller;
+  font-family: arial, sans-serif;
+}
+
+div.topbar {
+  font-size: smaller;
+  margin-right: -5px;
+  text-align: right;
+  white-space: nowrap;
+}
+div.header {
+  margin-bottom: 9px;
+  margin-left: -2px;
+  position: relative;
+  zoom: 1;
+}
+div.header img.logo {
+  border: 0;
+  float: left;
+}
+div.header div.headercontent {
+  float: right;
+  margin-top: 17px;
+}
+div.header:after {
+  content: ".";
+  display: block;
+  height: 0;
+  clear: both;
+  visibility: hidden;
+}
+div.pagetitle {
+  font-weight: bold;
+}
+
+.footer {
+  color: #666;
+  font-size: smaller;
+  margin-top: 40px;
+  text-align: center;
+}
+
+table#signupform {
+  left: -5px;
+  top: -7px;
+  position: relative;
+}
+table#signupform td {
+  padding: 7px 5px;
+}
+table#signupform td table td {
+  padding: 1px;
+}
+
+hr {
+  border: 0;
+  background-color: #dddddd;
+  height: 1px;
+  width: 100%;
+  text-align: left;
+  margin: 5px;
+}
+div.errormsg {
+  color: red;
+  font-size: smaller;
+  font-family: arial, sans-serif;
+}
+font.errormsg {
+  color: red;
+  font-size: smaller;
+  font-family: arial, sans-serif;
+}
+</style > <style type="text/css" > .gaia.le.lbl {
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: smaller;
+}
+.gaia.le.fpwd {
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 70%;
+}
+.gaia.le.chusr {
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 70%;
+}
+.gaia.le.val {
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: smaller;
+}
+.gaia.le.button {
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: smaller;
+}
+.gaia.le.rem {
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: smaller;
+}
+
+.gaia.captchahtml.desc {
+  font-family: arial, sans-serif;
+  font-size: smaller;
+}
+.gaia.captchahtml.cmt {
+  font-family: arial, sans-serif;
+  font-size: smaller;
+  font-style: italic;
+}

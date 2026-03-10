@@ -62,6 +62,10 @@ const options = {
         value: "2007",
         name: "2007",
       },
+      {
+        value: "2010",
+        name: "2010",
+      },
     ],
   },
   copyright: {

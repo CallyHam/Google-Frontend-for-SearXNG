@@ -1,0 +1,198 @@
+<html>
+  <head>
+    <title>Google Accounts</title>
+    <link rel="stylesheet" href="/static/assets/css/2010/login.css" />
+    <link rel="shortcut icon" href="/static/assets/images/2010/favicon.ico" type="image/x-icon" />
+  </head>
+  <body dir="ltr">
+    <div id="main">
+      <div class="header">
+        <a href="/accounts/">
+          <img class="logo" src="/static/assets/images/2010/accounts_logo.gif" alt="Google" />
+        </a>
+      </div>
+      <div id="maincontent">
+        <table border="0" width="100%" cellpadding="0" cellspacing="0">
+          <tbody>
+            <tr>
+              <td width="75%" valign="top">
+                <div style="font-size: 83%">
+                  <b> Sign in to personalize your Google experience. </b>
+                  <br /><br />
+                  Google has more to offer when you sign in to your Google Account. You can customize pages, view recommendations, and get more relevant search results.
+                  <br /><br />
+                  Sign in on the right or
+                  <a href="/accounts/new"> create one for free</a>
+                  using just an email address and password you choose.
+                  <br /><br />
+                  <table border="0" cellpadding="4">
+                    <tbody>
+                      <tr>
+                        <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>
+                        <td>
+                          <img src="/static/assets/images/2010/mail.gif" alt="Gmail" />
+                        </td>
+                        <td style="font-size: 83%">
+                          <a href="https://mail.google.com/">Gmail</a>
+                          <br />
+                          Get a fresh start with email that has less spam
+                        </td>
+                      </tr>
+                      <tr>
+                        <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>
+                        <td>
+                          <img src="/static/assets/images/2010/msh.gif" alt="Web History" />
+                        </td>
+                        <td style="font-size: 83%">
+                          <a href="/history">Web History</a>
+                          <br />
+                          Access and manage your web activity from any computer
+                        </td>
+                      </tr>
+                      <tr>
+                        <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>
+                        <td>
+                          <img src="/static/assets/images/2010/ig.gif" alt="iGoogle" />
+                        </td>
+                        <td style="font-size: 83%">
+                          <a href="/ig">iGoogle</a>
+                          <br />
+                          Add news, games and more to the Google homepage
+                        </td>
+                      </tr>
+                      <tr>
+                        <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>
+                        <td>
+                          <img src="/static/assets/images/2010/sierra.gif" alt="Google Checkout" />
+                        </td>
+                        <td style="font-size: 83%">
+                          <a href="https://checkout.google.com/">Google Checkout</a>
+                          <br />
+                          A faster, safer and more convenient way to shop online
+                        </td>
+                      </tr>
+                    </tbody>
+                  </table>
+                </div>
+              </td>
+              <td style="padding-left: 10px" valign="top" align="center">
+                <div id="rhs">
+                  <div id="rhs_login_signup_box">
+                    <form id="gaia_loginform" action="/accounts/auth" method="post">
+                      <div id="gaia_loginbox">
+                        <table class="form-noindent" cellspacing="3" cellpadding="5" width="100%" border="0">
+                          <tbody>
+                            <tr>
+                              <td valign="top" style="text-align: center" nowrap="nowrap" bgcolor="#e8eefa">
+                                <div class="loginBox">
+                                  <table id="gaia_table" align="center" border="0" cellpadding="1" cellspacing="0">
+                                    <tbody>
+                                      <tr>
+                                        <td colspan="2" align="center">
+                                          <font size="-1"> Sign in with your </font>
+                                          <table>
+                                            <tbody>
+                                              <tr>
+                                                <td valign="top">
+                                                  <img src="/static/assets/images/2010/google_transparent.gif" alt="Google" />
+                                                </td>
+                                                <td valign="middle">
+                                                  <font size="+0"><b>Account</b></font>
+                                                </td>
+                                              </tr>
+                                            </tbody>
+                                          </table>
+                                        </td>
+                                      </tr>
+                                      <tr>
+                                        <td colspan="2" align="center"></td>
+                                      </tr>
+                                      <tr id="email-row">
+                                        <td nowrap="nowrap">
+                                          <div align="right">
+                                            <span class="gaia le lbl"> Email: </span>
+                                          </div>
+                                        </td>
+                                        <td>
+                                          <input type="text" name="email" id="Email" size="18" class="gaia le val" />
+                                        </td>
+                                      </tr>
+                                      <tr>
+                                        <td></td>
+                                        <td align="left"></td>
+                                      </tr>
+                                      <tr id="password-row" class="enabled">
+                                        <td align="right" nowrap="nowrap">
+                                          <span class="gaia le lbl"> Password: </span>
+                                        </td>
+                                        <td>
+                                          <input type="password" id="Passwd" size="18" class="gaia le val" />
+                                        </td>
+                                      </tr>
+                                      <tr>
+                                        <td></td>
+                                        <td align="left"></td>
+                                      </tr>
+                                      <tr id="rememberme-row" class="enabled">
+                                        <td align="right" valign="top">
+                                          <input type="checkbox" name="remember" id="PersistentCookie" value="yes" checked="checked" />
+                                          <input type="hidden" name="rmShown" value="1" />
+                                        </td>
+                                        <td>
+                                          <label for="PersistentCookie" id="PersistentCookieLabel" class="gaia le rem"> Stay signed in </label>
+                                        </td>
+                                      </tr>
+                                      <tr>
+                                        <td></td>
+                                        <td align="left">
+                                          <input type="submit" class="gaia le button" id="signIn" value="Sign in" />
+                                        </td>
+                                      </tr>
+                                      <tr id="ga-fprow">
+                                        <td colspan="2" height="33.0" class="gaia le fpwd" align="center" valign="bottom">
+                                          <a href="/nonexistent" target="_top"> Can't access your account? </a>
+                                        </td>
+                                      </tr>
+                                    </tbody>
+                                  </table>
+                                </div>
+                              </td>
+                            </tr>
+                          </tbody>
+                        </table>
+                      </div>
+                    </form>
+                    <br />
+                    <table class="form-noindent" border="0" cellpadding="6" cellspacing="3" width="100%">
+                      <tbody>
+                        <tr>
+                          <td bgcolor="#e8eefa" align="center" style="font-size: 83%">
+                            <b>Don't have a Google Account? </b><br />
+                            <a href="/nonexistent">
+                              <b>Create an account now</b>
+                            </a>
+                          </td>
+                        </tr>
+                      </tbody>
+                    </table>
+                  </div>
+                  <br />
+                </div>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+      <div class="footer">
+        ©<%= preferences.copyright %> Google -
+        <a href="/">Google Home</a>
+        -
+        <a href="https://policies.google.com/terms">Terms of Service</a>
+        -
+        <a href="https://policies.google.com/privacy">Privacy Policy</a>
+        -
+        <a href="https://support.google.com/accounts/?hl=en#topic=3382296">Help</a>
+      </div>
+    </div>
+  </body>
+</html>

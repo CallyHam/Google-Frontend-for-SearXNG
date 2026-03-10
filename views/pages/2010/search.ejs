@@ -1,0 +1,327 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <% const params = new URLSearchParams(query) %>
+    <% const page = parseInt(query.page) || 1 %>
+    <title><%= query.q %> - Google Search</title>
+    <link rel="stylesheet" href="/static/assets/css/2010/search.css" />
+    <link rel="shortcut icon" href="/static/assets/images/2010/favicon.ico" type="image/x-icon" />
+    <script src="/static/assets/js/2010/gbar.js"></script>
+  </head>
+  <body id="gsr" topmargin="3" marginheight="3">
+    <div id="ghead">
+      <div id="gog">
+        <div id="gbar">
+          <nobr>
+            <b class="gb1">Web</b> <a href="/search?q=<%= query.q %>&category=images" class="gb1">Images</a>
+            <a href="https://www.google.com/videohp" class="gb1">Videos</a>
+            <a href="https://maps.google.com/maps" class="gb1">Maps</a>
+            <a href="https://news.google.com/home" class="gb1">News</a>
+            <a href="https://www.google.com/shopping" class="gb1">Shopping</a>
+            <a href="https://mail.google.com/mail/" class="gb1">Gmail</a>
+            <a
+              href="https://about.google/products/"
+              onclick="
+                this.blur();
+                gbar.tg(event, 'gbi');
+                return !1;
+              "
+              aria-haspopup="true"
+              class="gb3"
+            >
+              <u>more</u> <small>▼</small>
+            </a>
+            <div class="gbm" id="gbi" style="left: 341px; right: auto; top: 24px; visibility: hidden">
+              <a href="https://books.google.com/bkshp" class="gb2">Books</a>
+              <a href="https://www.google.com/finance" class="gb2">Finance</a>
+              <a href="https://translate.google.com/" class="gb2">Translate</a>
+              <a href="https://scholar.google.com/" class="gb2">Scholar</a>
+              <a href="https://blogsearch.google.com/" class="gb2">Blogs</a>
+              <div class="gb2">
+                <div class="gbd"></div>
+              </div>
+              <a href="https://www.youtube.com/" class="gb2">YouTube</a>
+              <a href="https://calendar.google.com/" class="gb2">Calendar</a>
+              <a href="https://photos.google.com/" class="gb2">Photos</a>
+              <a href="https://docs.google.com/" class="gb2">Documents</a>
+              <a href="https://www.google.com/reader/about/" class="gb2">Reader</a>
+              <a href="https://sites.google.com/" class="gb2">Sites</a>
+              <a href="https://groups.google.com/" class="gb2">Groups</a>
+              <div class="gb2">
+                <div class="gbd"></div>
+              </div>
+              <a href="https://about.google/products/" class="gb2">even more »</a>
+            </div>
+          </nobr>
+        </div>
+        <% if (cookies.email) { %>
+          <div id="guser" width="100%">
+            <nobr>
+              <b><%= cookies.email %></b> |
+              <span id="gbe"><a href="/ig" class="gb4">iGoogle</a> | </span>
+              <a
+                href="https://about.google/products/"
+                onclick="
+                  this.blur();
+                  gbar.tg(event, 'gbu');
+                  return !1;
+                "
+                aria-haspopup="true"
+                class="gb3"
+              >
+                <u>Settings</u> <small>▼</small>
+              </a> |
+              <div class="gbm" id="gbu" style="right: 63px; left: auto; top: 24px; visibility: hidden">
+                <a href="/preferences" class="gb2">Search settings</a>
+                <a href="/accounts/manage" class="gb2">Google Account settings</a>
+              </div>
+              <a href="/accounts/logout" class="gb4">Sign out</a>
+            </nobr>
+          </div>
+        <% } else { %>
+          <div id="guser" width="100%">
+            <nobr>
+              <span id="gbn" class="gbi"></span>
+              <span id="gbf" class="gbf"></span>
+              <span id="gbe"><a href="/ig" class="gb4">iGoogle</a> | </span>
+              <a href="/preferences" class="gb4">Search settings</a> |
+              <a href="/accounts/login" class="gb4">Sign in</a>
+            </nobr>
+          </div>
+        <% } %>
+        <div class="gbh" style="left: 0"></div>
+        <div class="gbh" style="right: 0"></div>
+      </div>
+    </div>
+    <textarea id="csi" style="display: none"></textarea>
+    <textarea id="wwcache" style="display: none"></textarea>
+    <div id="cnt">
+      <div id="sfcnt">
+        <form action="/search" id="tsf" method="GET" role="search" style="display: block; margin: 0; background: none" <%= preferences.results_tab == "true" ? "target=_blank" : "" %>>
+          <div>
+            <div style="float: left; margin-top: -7px; padding: 0 18px 0 12px">
+              <h1>
+                <a id="logo" href="/" title="Go to Google Home">Google<img width="167" height="267" src="/static/assets/images/2010/nav_logo39.png" alt="" /></a>
+              </h1>
+            </div>
+            <div class="tsf-p" style="padding-bottom: 2px">
+              <table border="0" cellpadding="0" cellspacing="0" style="border-bottom: 1px solid #e7e7e7; padding: 8px 0 0; position: relative; z-index: 2">
+                <tbody>
+                  <tr>
+                    <td class="lst-td" width="100%" >
+                      <div style="position: relative; zoom: 1"><input autocomplete="off" class="lst" type="text" name="q" maxlength="2048" value="<%= query.q %>" title="Search" /></div>
+                    </td>
+                    <td>
+                      <div class="ds">
+                        <div class="lsbb"><input type="submit" class="lsb" value="Search" /></div>
+                      </div>
+                    </td>
+                    <td>
+                      <div style="position: relative; height: 30px; z-index: 2">
+                        <div class="lsd"></div>
+                      </div>
+                    </td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+        </form>
+      </div>
+      <div id="subform_ctrl">
+        <div style="float: right">
+          <a href="/advanced_search" class="gl nobr" style="color: #36c">Advanced search</a>
+        </div>
+        <div>
+          <div id="resultStats">
+            About <%= search.total_result_count.toLocaleString() %> results
+            <nobr> (<%= search.response_time %> seconds)&nbsp;</nobr>
+          </div>
+        </div>
+      </div>
+      <div id="nr_container" style="position: relative; zoom: 1">
+        <div id="center_col">
+          <div id="res" class="med" role="main">
+            <div id="ires">
+              <% if (!search.results.length) { %>
+                <p>Your search - <b><%= query.q %></b> - did not match any documents.</p>
+                <p>Suggestions</p>
+                <ul id="no-results">
+                  <li>Make sure that all words are spelled correctly.</li>
+                  <li>Try different keywords.</li>
+                  <li>Try more general keywords.</li>
+                  <li>Try fewer keywords.</li>
+                </ul>
+              <% } else { %>
+              <ol>
+                <% for (var i=0; i<search.results.length; i++) { %>
+                <% const result = search.results[i] %>
+                <li class="g">
+                  <h3 class="r">
+                    <a href="<%= result.url %>" class="l"><%- utils.highlight(result.title, query.q) %></a>
+                  </h3>
+                  <div class="s">
+                    <%- utils.highlight(result.content, query.q) %>
+                    <br />
+                    <span class="f">
+                      <cite><%- utils.highlight(result.parsed_url.host + result.parsed_url.path, query.q) %></cite>
+                      -
+                      <span class="gl">
+                        <a href="https://web.archive.org/web/<%= new Date().getFullYear() %>if_/<%= result.parsed_url.host + result.parsed_url.path %>">Cached</a>
+                        -
+                        <a href="/search?q=related:<%= result.parsed_url.host + result.parsed_url.path %>">Similar</a>
+                      </span>
+                    </span>
+                  </div>
+                </li>
+                <% } %>
+              <% } %>
+              </ol>
+            </div>
+            <div id="brs" style="clear: both; margin-bottom: 17px; overflow: hidden">
+              <% if (search.suggestions.length) { %>
+                <div class="med" style="text-align: left">Searches related to <em><%= query.q %></em></div>
+              <% } %>
+              <% for (var i=0; i<search.suggestions.length; i++) { %>
+                <% const suggestion = search.suggestions[i] %>
+                <% if (i % 4 === 0) { %>
+                  <div class="brs_col">
+                <% } %>
+                <% const result = search.results[i] %>
+                <p>
+                  <a href="/search?q=<%= suggestion %>"><%= suggestion %></b></a>
+                </p>
+                <% if (i % 4 === 3 || i === search.results.length - 1) { %>
+                </div>
+                <% } %>
+              <% } %>
+            </div>
+          </div>
+        </div>
+        <div id="leftnav" role="navigation" style="padding-top: 3px; padding-left: 4px; position: absolute; top: 0; width: 151px;">
+          <div id="ms" style="border-bottom: 1px solid #c9d7f1; padding-bottom:9px">
+            <ul>
+              <li class="mitem msel"><span class="micon" style="background-position: -20px -132px"></span>Everything</li>
+              <li class="mitem">
+                <a href="/search?q=<%= query.q %>&category=images" class="q qs"><span class="micon" style="background-position: -40px -132px"></span>Images</a>
+              </li>
+              <li class="mitem">
+                <a href="/nonexistent" class="q qs"><span class="micon" style="background-position: -80px -132px"></span>Videos</a>
+              </li>
+              <li class="mitem">
+                <a href="/nonexistent" class="q qs"><span class="micon" style="background-position: -120px -132px"></span>News</a>
+              </li>
+              <li class="mitem">
+                <a href="/nonexistent" class="q qs"><span class="micon" style="background-position: -120px -152px"></span>Shopping</a>
+              </li>
+            </ul>
+          </div>
+          <div style="clear: both; overflow: hidden">
+            <h2 class="hd">Search Options</h2>
+            <ul id="tbd" class="med">
+              <li>
+                <ul class="tbt">
+                  <li class="tbos" id="qdr_" >Any time</li>
+                  <li class="tbou" id="rltm_1">
+                    <a href="/nonexistent" class="q qs">Latest</a>
+                  </li>
+                  <li class="tbou" id="qdr_d">
+                    <a href="/nonexistent" class="q qs">Past 24 hours</a>
+                  </li>
+                  <li class="tbou" id="qdr_d3">
+                    <a href="/nonexistent" class="q qs">Past 3 days</a>
+                  </li>
+                  <li class="tbou" id="qdr_w">
+                    <a href="/nonexistent" class="q qs">Past week</a>
+                  </li>
+                  <li class="tbou" id="qdr_m">
+                    <a href="/nonexistent" class="q qs">Past month</a>
+                  </li>
+                  <li class="tbou" id="qdr_y">
+                    <a href="/nonexistent" class="q qs">Past year</a>
+                  </li>
+                  <li class="jsb tbou" id="cdr_opt">
+                    <a
+                      href="/nonexistent"
+                      class="q"
+                      id="cdrlnk"
+                      >Custom range...</a
+                    >
+                  </li>
+                </ul>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+      <div id="foot" class="tsf-p" role="contentinfo">
+        <div id="navcnt">
+          <table id="nav" style="border-collapse: collapse; text-align: left; direction: ltr; margin: 17px auto 0">
+            <tbody>
+              <tr valign="top">
+                <% var start = page - 4 %>
+                <% var end = page + 5 %>
+                <% if (page <= 5)  { %>
+                  <% start = 1 %>
+                  <% end = 10 %>
+                <% } %>
+                <% if (page == 1) { %>
+                  <td class="b"><span class="csb" style="background-position: -24px 0; width: 28px"></span></td>
+                <% } else { %>
+                  <% params.set("page", page - 1) %>
+                  <td class="b">
+                    <a href="/search?<%= params.toString() %>" class="pn" id="pnnext" style="text-align: left; text-decoration: none">
+                      <span class="csb ch" style="background-position: 0 0; width: 53px"></span>
+                      <span style="display: block; text-decoration: underline">Prev</span>
+                    </a>
+                  </td>
+                <% } %>
+                <% for (var i=start; i<=end; i++) { %>
+                  <% if (page == i) { %>
+                    <td class="cur"><span class="csb" style="background-position: -53px 0; width: 20px"></span><%= i %></td>
+                  <% } else { %>
+                    <% params.set("page", i) %>
+                    <td>
+                      <a href="/search?<%= params.toString() %>" class="fl"><span class="csb ch" style="background-position: -74px 0; width: 20px"></span><%= i %></a>
+                    </td>
+                  <% } %>
+                <% } %>
+                <% params.set("page", page + 1) %>
+                <td class="b">
+                  <a href="/search?<%= params.toString() %>" class="pn" id="pnnext" style="text-align: left; text-decoration: none">
+                    <span class="csb ch" style="background-position: -96px 0; width: 71px"></span>
+                    <span style="display: block; margin-left: 53px; text-decoration: underline">Next</span>
+                  </a>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+        <div style="height: 1px; line-height: 0"></div>
+        <div>
+          <div id="sftr" style="margin-top: 22px">
+            <form method="get" action="/search" <%= preferences.results_tab == "true" ? "target=_blank" : "" %>>
+              <table border="0" cellpadding="0" cellspacing="0">
+                <tbody>
+                  <tr>
+                    <td class="lst-td" width="100%"><input class="lst" type="text" name="q" maxlength="2048" value="<%= query.q %>" title="Search" /></td>
+                    <td>
+                      <div class="ds">
+                        <div class="lsbb"><input type="submit" class="lsb" value="Search" /></div>
+                      </div>
+                    </td>
+                  </tr>
+                </tbody>
+              </table>
+            </form>
+          </div>
+          <p id="bfl" style="margin: 6px 0 0; text-align: center">
+            <a href="/nonexistent" class="fl">Search Help</a>
+            <a href="/nonexistent" target="_blank" class="fl">Give us feedback</a>
+          </p>
+        </div>
+        <div id="fll" style="margin: 19px auto 19px auto; text-align: center"><a href="/">Google&nbsp;Home</a><a href="https://ads.google.com">Advertising&nbsp;Programs</a><a href="https://business.google.com">Business Solutions</a><a href="https://policies.google.com/privacy">Privacy</a><a href="https://about.google">About Google</a></div>
+      </div>
+    </div>
+  </body>
+</html>

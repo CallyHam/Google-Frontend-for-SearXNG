@@ -1,0 +1,182 @@
+<html>
+  <head>
+    <title>Preferences</title>
+    <link rel="stylesheet" href="/static/assets/css/2010/preferences.css" />
+    <link rel="shortcut icon" href="/static/assets/images/2010/favicon.ico" type="image/x-icon" />
+    <script src="/static/assets/js/2010/gbar.js"></script>
+  </head>
+  <body alink="#ff0000" bgcolor="#ffffff" link="#0000cc" text="#000000" vlink="#551a8b" topmargin="3" marginheight="3">
+    <div id="ghead">
+      <div id="gog">
+        <div id="gbar">
+          <nobr>
+            <b class="gb1">Web</b> <a href="/imghp" class="gb1">Images</a>
+            <a href="https://www.google.com/videohp" class="gb1">Videos</a>
+            <a href="https://maps.google.com/maps" class="gb1">Maps</a>
+            <a href="https://news.google.com/home" class="gb1">News</a>
+            <a href="https://www.google.com/shopping" class="gb1">Shopping</a>
+            <a href="https://mail.google.com/mail/" class="gb1">Gmail</a>
+            <a
+              href="https://about.google/products/"
+              onclick="
+                this.blur();
+                gbar.tg(event, 'gbi');
+                return !1;
+              "
+              aria-haspopup="true"
+              class="gb3"
+            >
+              <u>more</u> <small>▼</small>
+            </a>
+            <div class="gbm" id="gbi" style="left: 341px; right: auto; top: 24px; visibility: hidden">
+              <a href="https://books.google.com/bkshp" class="gb2">Books</a>
+              <a href="https://www.google.com/finance" class="gb2">Finance</a>
+              <a href="https://translate.google.com/" class="gb2">Translate</a>
+              <a href="https://scholar.google.com/" class="gb2">Scholar</a>
+              <a href="https://blogsearch.google.com/" class="gb2">Blogs</a>
+              <div class="gb2">
+                <div class="gbd"></div>
+              </div>
+              <a href="https://www.youtube.com/" class="gb2">YouTube</a>
+              <a href="https://calendar.google.com/" class="gb2">Calendar</a>
+              <a href="https://photos.google.com/" class="gb2">Photos</a>
+              <a href="https://docs.google.com/" class="gb2">Documents</a>
+              <a href="https://www.google.com/reader/about/" class="gb2">Reader</a>
+              <a href="https://sites.google.com/" class="gb2">Sites</a>
+              <a href="https://groups.google.com/" class="gb2">Groups</a>
+              <div class="gb2">
+                <div class="gbd"></div>
+              </div>
+              <a href="https://about.google/products/" class="gb2">even more »</a>
+            </div>
+          </nobr>
+        </div>
+        <% if (cookies.email) { %>
+          <div id="guser" width="100%">
+            <nobr>
+              <b><%= cookies.email %></b> |
+              <span id="gbe"><a href="/ig" class="gb4">iGoogle</a> | </span>
+              <a
+                href="https://about.google/products/"
+                onclick="
+                  this.blur();
+                  gbar.tg(event, 'gbu');
+                  return !1;
+                "
+                aria-haspopup="true"
+                class="gb3"
+              >
+                <u>Settings</u> <small>▼</small>
+              </a> |
+              <div class="gbm" id="gbu" style="right: 63px; left: auto; top: 24px; visibility: hidden">
+                <a href="/preferences" class="gb2">Search settings</a>
+                <a href="/accounts/manage" class="gb2">Google Account settings</a>
+              </div>
+              <a href="/accounts/logout" class="gb4">Sign out</a>
+            </nobr>
+          </div>
+        <% } else { %>
+          <div id="guser" width="100%">
+            <nobr>
+              <span id="gbn" class="gbi"></span>
+              <span id="gbf" class="gbf"></span>
+              <span id="gbe"><a href="/ig" class="gb4">iGoogle</a> | </span>
+              <a href="/preferences" class="gb4">Search settings</a> |
+              <a href="/accounts/login" class="gb4">Sign in</a>
+            </nobr>
+          </div>
+        <% } %>
+        <div class="gbh" style="left: 0"></div>
+        <div class="gbh" style="right: 0"></div>
+      </div>
+    </div>
+    <div style="width:100%;clear:both">
+      <form method="POST" action="/preferences/set">
+        <input type="hidden" name="sig" value="0_01v4zzbfpHGVlmKFFJbS_ZwLXPE=">
+        <table width="100%" border="0" cellpadding="0" cellspacing="0">
+          <tbody>
+            <tr>
+              <td valign="top" width="1%"><a href="/"><img alt="Google" border="0" src="/static/assets/images/2010/logo_sm.gif" width="150" height="55"></a></td>
+              <td>&nbsp;</td>
+              <td nowrap="nowrap">
+                <table cellspacing="0" cellpadding="0" border="0" width="100%">
+                  <tbody>
+                    <tr>
+                      <td bgcolor="#3366cc"><img width="1" height="1" alt=""></td>
+                    </tr>
+                  </tbody>
+                </table>
+                <table cellspacing="0" cellpadding="0" border="0" width="100%">
+                  <tbody>
+                    <tr>
+                      <td bgcolor="#e5ecf9" nowrap="nowrap"><font face="arial,sans-serif" color="#000000" size="+1"><b>&nbsp;Preferences</b></font></td>
+                      <td align="right" bgcolor="#e5ecf9" nowrap="nowrap"><font face="arial,sans-serif" size="-1" color="#000000"><a href="http://web.archive.org/web/20100829230904/http://www.google.com/accounts/ManageAccount">Google Account settings</a> | <a href="http://web.archive.org/web/20100829230904/http://www.google.com/support/websearch/bin/answer.py?answer=35892&amp;hl=en">Preferences Help</a> | <a href="http://web.archive.org/web/20100829230904/http://www.google.com/about.html">About Google</a>&nbsp;</font></td>
+                    </tr>
+                  </tbody>
+                </table>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+        <table width="100%" border="0" cellspacing="0" cellpadding="2">
+          <tbody>
+            <tr bgcolor="#e5ecf9">
+              <td><font face="arial,sans-serif" size="-1"> <b>Save</b> your preferences when finished and <b>return to search</b>.</font></td>
+              <td align="right"><font face="arial,sans-serif" size="-1"><input type="submit" value="Save Preferences " name="submit2"></font></td>
+            </tr>
+          </tbody>
+        </table>
+        <p><b>Global Preferences </b><font size="-1">(changes apply to all Google services)</font><br>
+        <table width="100%" cellpadding="0" cellspacing="0" border="0">
+          <tbody>
+            <tr>
+              <td bgcolor="#cbdced"><img alt="" height="1" width="1"></td>
+            </tr>
+          </tbody>
+        </table>
+        <% Object.values(groups).forEach(group => { %>
+          <table width="100%" cellpadding="0" cellspacing="0" border="0">
+            <tbody>
+              <tr>
+                <td colspan="4" bgcolor="#cbdced"><img alt="" height="1" width="1"></td>
+              </tr>
+              <tr>
+                <td width="1" bgcolor="#cbdced"><img alt="" height="1" width="2"></td>
+                <td valign="top" width="175" nowrap="nowrap">&nbsp;<br>&nbsp;<font size="-1" face="arial,sans-serif"><b><%= group.name %></b></font><a name="safe">&nbsp;</a></td>
+                <td>&nbsp;
+                  <br>
+                  <% group.options.forEach(id => { %>
+                    <% const option = options[id] %>
+                    <% const value = cookies[id] ?? option.default %>
+                    <%- include("../../partials/2001/preferencesField", { id, option, value }) %>
+                  <% }) %>
+                  <br>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        <% }); %>
+        <table width="100%" cellpadding="0" cellspacing="0" border="0">
+          <tbody>
+            <tr>
+              <td bgcolor="#cbdced"><img alt="" height="2" width="1"></td>
+            </tr>
+          </tbody>
+        </table>
+        <br>
+        <table width="100%" border="0" cellspacing="0" cellpadding="2">
+          <tbody>
+            <tr bgcolor="#e5ecf9">
+              <td><font face="arial,sans-serif" size="-1"> <b>Save</b> your preferences when finished and <b>return to search</b>.</font></td>
+              <td align="right"><font face="arial,sans-serif" size="-1"><input type="submit" value="Save Preferences " name="submit2"></font></td>
+            </tr>
+          </tbody>
+        </table>
+        </p>
+        <p><font color="#666666" size="-1">(Note: Setting preferences will not work if you have disabled cookies in your browser.) </font></p>
+        <p></p>
+        <div align="center"><font face="arial,sans-serif" size="-1">©<%= preferences.copyright %> Google </font></div>
+      </form>
+    </div>
+  </body>
+</html>

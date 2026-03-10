@@ -1,0 +1,83 @@
+body,
+td,
+div,
+.p,
+a {
+  font-family: arial, sans-serif;
+}
+select {
+  font-family:
+    arial unicode ms,
+    arial,
+    sans-serif;
+}
+#gog {
+  background: #fff;
+}
+#gbar,
+#guser {
+  font-size: 13px;
+  padding-top: 1px !important;
+}
+#gbar {
+  float: left;
+  height: 22px;
+}
+#guser {
+  padding-bottom: 7px !important;
+  text-align: right;
+}
+.gbh,
+.gbd {
+  border-top: 1px solid #c9d7f1;
+  font-size: 1px;
+}
+.gbh {
+  height: 0;
+  position: absolute;
+  top: 24px;
+  width: 100%;
+}
+#gbs,
+.gbm {
+  background: #fff;
+  left: 0;
+  position: absolute;
+  text-align: left;
+  visibility: hidden;
+  z-index: 1000;
+}
+.gbm {
+  border: 1px solid;
+  border-color: #c9d7f1 #36c #36c #a2bae7;
+  z-index: 1001;
+}
+.gb1 {
+  margin-right: 0.5em;
+}
+.gb1,
+.gb3 {
+  zoom: 1;
+}
+.gb2 {
+  display: block;
+  padding: 0.2em 0.5em;
+}
+.gb2,
+.gb3 {
+  text-decoration: none;
+  border-bottom: none;
+}
+a.gb1,
+a.gb2,
+a.gb3,
+a.gb4 {
+  color: #00c !important;
+}
+a.gb2:hover {
+  background: #36c;
+  color: #fff !important;
+}
+.sslh {
+  display: none;
+}
