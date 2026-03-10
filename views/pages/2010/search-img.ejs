@@ -184,35 +184,22 @@
               <% } %>
             </div>
             <div id="brs" style="clear: both; margin-bottom: 17px; overflow: hidden">
-              <div class="med" style="text-align: left">Searches related to <em><%= query.q %></em></div>
-              <div class="brs_col">
+              <% if (search.suggestions.length) { %>
+                <div class="med" style="text-align: left">Searches related to <em><%= query.q %></em></div>
+              <% } %>
+              <% for (var i=0; i<search.suggestions.length; i++) { %>
+                <% const suggestion = search.suggestions[i] %>
+                <% if (i % 4 === 0) { %>
+                  <div class="brs_col">
+                <% } %>
+                <% const result = search.results[i] %>
                 <p>
-                  <a href="https://www.google.com/search?hl=en&amp;ie=UTF-8&amp;q=google+jobs&amp;revid=1853296426&amp;sa=X&amp;ei=6SGcTYu4J4uisAOt9ImbBA&amp;ved=0CGIQ1QIoAA">google <b>jobs</b></a>
+                  <a href="/search?q=<%= suggestion %>"><%= suggestion %></b></a>
                 </p>
-                <p>
-                  <a href="https://www.google.com/search?hl=en&amp;ie=UTF-8&amp;q=google+wiki&amp;revid=1853296426&amp;sa=X&amp;ei=6SGcTYu4J4uisAOt9ImbBA&amp;ved=0CGMQ1QIoAQ">google <b>wiki</b></a>
-                </p>
-                <p>
-                  <a href="https://www.google.com/search?hl=en&amp;ie=UTF-8&amp;q=google+%2B1&amp;revid=1853296426&amp;sa=X&amp;ei=6SGcTYu4J4uisAOt9ImbBA&amp;ved=0CGQQ1QIoAg">google <b>+1</b></a>
-                </p>
-                <p>
-                  <a href="https://www.google.com/search?hl=en&amp;ie=UTF-8&amp;q=google+tv&amp;revid=1853296426&amp;sa=X&amp;ei=6SGcTYu4J4uisAOt9ImbBA&amp;ved=0CGUQ1QIoAw">google <b>tv</b></a>
-                </p>
-              </div>
-              <div class="brs_col">
-                <p>
-                  <a href="https://www.google.com/search?hl=en&amp;ie=UTF-8&amp;q=google+docs&amp;revid=1853296426&amp;sa=X&amp;ei=6SGcTYu4J4uisAOt9ImbBA&amp;ved=0CGYQ1QIoBA">google <b>docs</b></a>
-                </p>
-                <p>
-                  <a href="https://www.google.com/search?hl=en&amp;ie=UTF-8&amp;q=google+talk&amp;revid=1853296426&amp;sa=X&amp;ei=6SGcTYu4J4uisAOt9ImbBA&amp;ved=0CGcQ1QIoBQ">google <b>talk</b></a>
-                </p>
-                <p>
-                  <a href="https://www.google.com/search?hl=en&amp;ie=UTF-8&amp;q=google+voice&amp;revid=1853296426&amp;sa=X&amp;ei=6SGcTYu4J4uisAOt9ImbBA&amp;ved=0CGgQ1QIoBg">google <b>voice</b></a>
-                </p>
-                <p>
-                  <a href="https://www.google.com/search?hl=en&amp;ie=UTF-8&amp;q=google+stock&amp;revid=1853296426&amp;sa=X&amp;ei=6SGcTYu4J4uisAOt9ImbBA&amp;ved=0CGkQ1QIoBw">google <b>stock</b></a>
-                </p>
-              </div>
+                <% if (i % 4 === 3 || i === search.results.length - 1) { %>
+                </div>
+                <% } %>
+              <% } %>
             </div>
           </div>
         </div>
