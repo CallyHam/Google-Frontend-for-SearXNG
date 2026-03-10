@@ -5,7 +5,7 @@ window.gbar = {
   tg: function (e, id) {
     (e || window.event).cancelBubble = true;
 
-    const menu = document.getElementById(id);
+    var menu = document.getElementById(id);
 
     if (this.open && this.open !== menu) {
       this.open.style.visibility = "hidden";
@@ -19,10 +19,8 @@ window.gbar = {
       this.open = null;
     }
 
-    document.onclick = (e) => {
-      if (e.target !== menu) {
-        menu.style.visibility = "hidden";
-      }
+    document.onclick = function (e) {
+      menu.style.visibility = "hidden";
     };
-  },
+  }
 };

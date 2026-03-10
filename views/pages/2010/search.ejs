@@ -146,7 +146,7 @@
               <% if (!search.results.length) { %>
                 <p>Your search - <b><%= query.q %></b> - did not match any documents.</p>
                 <p>Suggestions</p>
-                <ul id="no-results">
+                <ul>
                   <li>Make sure that all words are spelled correctly.</li>
                   <li>Try different keywords.</li>
                   <li>Try more general keywords.</li>
@@ -187,11 +187,10 @@
                 <% if (i % 4 === 0) { %>
                   <div class="brs_col">
                 <% } %>
-                <% const result = search.results[i] %>
                 <p>
-                  <a href="/search?q=<%= suggestion %>"><%= suggestion %></b></a>
+                  <a href="/search?q=<%= suggestion %>"><%= suggestion %></a>
                 </p>
-                <% if (i % 4 === 3 || i === search.results.length - 1) { %>
+                <% if (i % 4 === 3 || i === search.suggestions.length - 1) { %>
                 </div>
                 <% } %>
               <% } %>

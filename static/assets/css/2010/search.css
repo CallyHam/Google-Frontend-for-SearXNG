@@ -145,7 +145,6 @@ cite a:visited,
 }
 h1,
 ol,
-ul,
 li {
   margin: 0;
   padding: 0;
@@ -562,7 +561,6 @@ td.w0:hover .ws {
   opacity: 1;
 }
 ol,
-ul,
 li {
   border: 0;
   margin: 0;
@@ -791,6 +789,9 @@ li.g {
   min-height: 1px;
 }
 .tbt {
+  border: 0;
+  margin: 0;
+  padding: 0;
   font-size: 13px;
   line-height: 1.2;
 }
@@ -1135,7 +1136,8 @@ div.s {
   overflow: hidden;
   text-overflow: ellipsis;
 }
-ul#no-results {
-  margin: revert;
-  padding: revert;
+#ms ul {
+  border: 0;
+  margin: 0;
+  padding: 0;
 }
