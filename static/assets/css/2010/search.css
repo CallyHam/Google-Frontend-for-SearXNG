@@ -296,6 +296,7 @@ h1 {
   color: #000;
   cursor: pointer;
   height: 30px;
+  box-sizing: border-box;
   margin: 0;
   vertical-align: top;
 }

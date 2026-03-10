@@ -178,6 +178,7 @@ a.gb3:hover {
 }
 .lsb {
   background: url(/static/assets/images/2010/nav_logo14.png) bottom;
+  box-sizing: border-box;
   font:
     15px arial,
     sans-serif;
