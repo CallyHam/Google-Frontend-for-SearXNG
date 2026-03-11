@@ -3,24 +3,24 @@ const { languages } = require("./languages");
 const groups = {
   layout: {
     name: "Layout",
-    options: ["layout"],
+    options: ["layout"]
   },
   cosmetic: {
     name: "Cosmetic",
-    options: ["copyright", "total"],
+    options: ["copyright", "total"]
   },
   searxng: {
     name: "SearXNG",
-    options: ["instance", "web_engines", "image_engines"],
+    options: ["instance", "web_engines", "image_engines"]
   },
   search: {
     name: "Search Settings",
-    options: ["language", "results_tab"],
+    options: ["language", "results_tab"]
   },
   safesearch: {
     name: "SafeSearch",
-    options: ["safesearch"],
-  },
+    options: ["safesearch"]
+  }
 };
 
 const options = {
@@ -32,41 +32,41 @@ const options = {
     choices: [
       {
         value: "basic",
-        name: "Basic",
+        name: "Basic"
       },
       {
         value: "1999",
-        name: "1999",
+        name: "1999"
       },
       {
         value: "2000",
-        name: "2000",
+        name: "2000"
       },
       {
         value: "2001",
-        name: "2001",
+        name: "2001"
       },
       {
         value: "2002",
-        name: "2002",
+        name: "2002"
       },
       {
         value: "2004",
-        name: "2004",
+        name: "2004"
       },
       {
         value: "2006",
-        name: "2006",
+        name: "2006"
       },
       {
         value: "2007",
-        name: "2007",
+        name: "2007"
       },
       {
         value: "2010",
-        name: "2010",
-      },
-    ],
+        name: "2010"
+      }
+    ]
   },
   copyright: {
     type: "number",
@@ -74,7 +74,7 @@ const options = {
     summary: "Copyright year to display",
     min: 0,
     max: 9999,
-    default: new Date().getFullYear(),
+    default: new Date().getFullYear()
   },
   total: {
     type: "number",
@@ -83,41 +83,41 @@ const options = {
     min: 0,
     max: Infinity,
     default: 0,
-    layouts: ["basic"],
+    layouts: ["basic"]
   },
   instance: {
     type: "text",
     name: "SearXNG Instance",
     summary: "Instance to query for search results",
     maxlength: 2048,
-    default: "",
+    default: ""
   },
   web_engines: {
     type: "text",
     name: "Web Engines",
     summary: "Engines that will provide web results",
     maxlength: 2048,
-    default: "google",
+    default: "google"
   },
   image_engines: {
     type: "text",
     name: "Image Engines",
     summary: "Engines that will provide image results",
     maxlength: 2048,
-    default: "google_images",
+    default: "google images"
   },
   language: {
     type: "select",
     name: "Language",
     summary: "Prefer pages written in this language",
     default: "auto",
-    choices: languages,
+    choices: languages
   },
   results_tab: {
     type: "checkbox",
     name: "Results Tab",
     summary: "Open a new tab for search results",
-    default: "false",
+    default: "false"
   },
   safesearch: {
     type: "select",
@@ -127,18 +127,18 @@ const options = {
     choices: [
       {
         value: "0",
-        name: "None",
+        name: "None"
       },
       {
         value: "1",
-        name: "Moderate",
+        name: "Moderate"
       },
       {
         value: "2",
-        name: "Strict",
-      },
-    ],
-  },
+        name: "Strict"
+      }
+    ]
+  }
 };
 
 module.exports = { groups, options };
