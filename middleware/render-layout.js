@@ -48,7 +48,7 @@ function renderLayout(req, res, next) {
 
       return res.render(view, locals, (error, html) => {
         if (error) {
-          if (process.env.NODE_ENV === "prod") {
+          if (process.env.NODE_ENV === "production") {
             error.status = 500;
             error.statusText = "Internal Server Error";
             error.message = "An internal server error has occurred.";

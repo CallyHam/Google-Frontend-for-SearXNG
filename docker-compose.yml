@@ -1,0 +1,11 @@
+services:
+  googlefrontendforsearxng:
+    image: googlefrontendforsearxng
+    build:
+      context: .
+      dockerfile: ./Dockerfile
+    environment:
+      SERVER_PORT: 3000
+      NODE_ENV: production
+    ports:
+      - 3000:3000
