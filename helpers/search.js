@@ -9,7 +9,7 @@ async function fetchSearchResults(query, preferences, locale) {
 
   const categoryEngines = {
     general: web_engines,
-    images: image_engines,
+    images: image_engines
   };
 
   const engines = (categoryEngines[category] || web_engines).split(",");
@@ -37,8 +37,8 @@ async function fetchSearchResults(query, preferences, locale) {
   const search = await fetch(route, {
     headers: {
       "Accept-Language": locale,
-      Cookie: `enabled_engines=${enabledEnginesString}; disabled_engines=${disabledEnginesString}`,
-    },
+      Cookie: `enabled_engines=${enabledEnginesString}; disabled_engines=${disabledEnginesString}`
+    }
   }).then((response) => response.json());
 
   const endTime = Date.now();
@@ -73,7 +73,7 @@ async function fetchSearchResults(query, preferences, locale) {
     response_time: responseTime,
     template: template,
     results: [],
-    suggestions: search.suggestions,
+    suggestions: search.suggestions
   };
 
   for (const item of search.results) {
@@ -89,9 +89,9 @@ async function fetchSearchResults(query, preferences, locale) {
       parsed_url: {
         protocol: parsedUrl.protocol,
         host: parsedUrl.hostname,
-        path: parsedUrl.pathname,
+        path: parsedUrl.pathname
       },
-      content: item.content ? item.content : "No information is available for this page.",
+      content: item.content ? item.content : "No information is available for this page."
     };
 
     results.results.push(result);

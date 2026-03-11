@@ -585,8 +585,7 @@ li.g {
   width: 595px;
 }
 #cnt {
-  min-width: 780px;
-  max-width: 1144px;
+  width: 880px;
   padding-top: 17px;
 }
 .gbh {
