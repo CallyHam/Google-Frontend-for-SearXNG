@@ -148,5 +148,37 @@
         </center>
       </span>
     </center>
+    <% if (cookies.email) { %>
+      <a id="cb-l" href="javascript:void(0)">Change background image</a>
+      <table style="visibility: hidden;" id="cb-p" cellpadding="0" celspacing="0">
+        <tbody>
+          <tr></tr>
+          <tr>
+            <td>
+              <div id="cb-c">
+                <div id="cb-h">
+                  <span id="cb-ht">Select a background image for your Google homepage</span>
+                  <a id="cb-cb" href="javascript:void(0)">
+                    <img src="/static/assets/images/2006/x2.gif">
+                  </a>
+                </div>
+                <div id="cb-r">
+                  <div id="cb-rc">
+                    <span id="cb-il">Type the url for your image</span>
+                    <input type="text" id="cb-i" name="cb-i" size="45">
+                  </div>
+                  <div id="cb-rb">
+                    <button id="cb-rs">Select</button>
+                    <span id="cb-rl">Only select images that you have confirmed that you have the license to use.</span>
+                  </div>
+                </div>
+              </div>
+            </td>
+          </tr>
+          <tr></tr>
+        </tbody>
+      </table>
+      <script src="/static/assets/js/2010/background-image.js"></script>
+    <% } %>
   </body>
 </html>
