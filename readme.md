@@ -18,4 +18,4 @@ This project is highly unfinished and is sure to contain many bugs, it is being 
 
 ## New Project
 
-If you're interested post-2010 layouts, please stay tuned for an upcoming project which will recreate a (not yet decided) era from 2011-2014
+If you're interested post-2010 layouts, please stay tuned for an upcoming project which will recreate one (not yet decided) era from 2011-2014.
