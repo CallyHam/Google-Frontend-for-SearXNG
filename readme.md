@@ -15,3 +15,7 @@ A configurable frontend for SearXNG instances made to look like Google (1999 - 2
 ## Disclaimer
 
 This project is highly unfinished and is sure to contain many bugs, it is being provided as is and will not be actively maintained, however pull requests are always welcome for community bug-fixes and new features.
+
+## New Project
+
+If you're interested post-2010 layouts, please stay tuned for an upcoming project which will recreate a (not yet decided) era from 2011-2014
