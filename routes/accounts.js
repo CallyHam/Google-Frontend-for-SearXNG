@@ -20,14 +20,14 @@ router.post("/auth", (req, res) => {
     httpOnly: false,
     secure: false,
     sameSite: "lax",
-    expires: new Date("Tue, 19 Jan 2038 03:14:07 GMT"),
+    expires: new Date("Tue, 19 Jan 2038 03:14:07 GMT")
   };
 
   if (!req.body["remember"]) {
     delete cookieOptions.expires;
   }
 
-  res.cookie("email", req.body["email"]);
+  res.cookie("email", req.body["email"], cookieOptions);
 
   return res.redirect("/");
 });
