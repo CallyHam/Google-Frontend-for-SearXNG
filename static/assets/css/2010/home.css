@@ -465,7 +465,8 @@ body[background-image="true"] {
 }
 
 body[background-image="true"] center a,
+body[background-image="true"] center p,
 body[background-image="true"] #cb-l {
-  color: #fff;
+  color: #fff !important;
   text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.75);
 }
